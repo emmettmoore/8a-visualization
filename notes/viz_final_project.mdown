@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Viz Final Project Ideas</title>
+        <link rel="stylesheet" type="tex`t/css" href="style.css">
+</head>
+<body>
+
+# Visualization Final Project Ideas
+
+## 8a Visualization
+
+### Possible Stories
+1.	Routes that are popular are soft.
+2.  Visualize areas that are soft vs. sandbagged (heatmap)
+3.  (Even simpler) visualize traffic to different areas
+4.  Visualize who travels to where
+
+### Complications
+1.	Complex. Requires determining a valid metric of soft vs. sandbagged, classics vs. non-classics.
+    - Notes that the data in this database _only includes ascents_. This means that we have no data on the opinions of those that may have gotten pummeled on a route. 
+    - This means that there is probably no easy way to detect that sandbags are not "classic".
+2.  8a combines unreliable user data with poor organization.
+    -   Users log routes, and 8a adds a new climb to the database if there is not "collision".
+    -   The site doesn't give a useful link (it is "8a.nu") for each page until reached individual climbs, or user pages.
+    -   If a climb is logged with two different grades in the database, we will see it twice in the "area" list. Both links will go to the same place, however.
+    -   This allows for users to accidentally spell climbs wrong and have them added to the DB wrong.
+    -   Anonymous accounts must be filtered out (don't go to an actual logbook; just says "this user is anonymous").
+
+
+### We Need to Make a Crawler
+- [Stack Overflow Post][1]
+- Frames, wtf. 
+- Say we hard-code the starting places to get this data. We will start at an areas list of classics (e.g. the [RRG][3]) (oh, wait. we don't have RESTful URLs)
+
+#### Crawler Pseudocode<pre><code>    
+    for area in areas: # This won't *yet* be done programatically. 
+                       # Too difficult, since we don't have RESTful URLs for these sites.
+        for line in climbs_list:
+            climbs.append(climb(line['url'])) # take in the url as a constructor arg. Constructor does the rest.
+                                              # Once you get to a climb's link, the url is relocatable 
+                                              # (i.e. not 8a.nu. Of course it is really long and ugly instead).
+</pre></code>
+</body>
+</html>
+[1]: http://www.example.com/ "Example"
+[2]: http://stackoverflow.com/questions/102631/how-to-write-a-crawler "Crawler"
+[3]: http://www.8a.nu/ "Crawler"

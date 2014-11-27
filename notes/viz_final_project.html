@@ -1,0 +1,60 @@
+<p><!DOCTYPE html>
+<html>
+<head>
+        <title>Viz Final Project Ideas</title>
+        <link rel="stylesheet" type="tex`t/css" href="style.css">
+</head>
+<body></p>
+
+<h1>Visualization Final Project Ideas</h1>
+
+<h2>8a Visualization</h2>
+
+<h3>Possible Stories</h3>
+
+<ol>
+<li>Routes that are popular are soft.</li>
+<li>Visualize areas that are soft vs. sandbagged (heatmap)</li>
+<li>(Even simpler) visualize traffic to different areas</li>
+<li>Visualize who travels to where</li>
+</ol>
+
+<h3>Complications</h3>
+
+<ol>
+<li>Complex. Requires determining a valid metric of soft vs. sandbagged, classics vs. non-classics.
+<ul>
+<li>Notes that the data in this database <em>only includes ascents</em>. This means that we have no data on the opinions of those that may have gotten pummeled on a route. </li>
+<li>This means that there is probably no easy way to detect that sandbags are not "classic".</li>
+</ul></li>
+<li>8a combines unreliable user data with poor organization.
+<ul>
+<li>Users log routes, and 8a adds a new climb to the database if there is not "collision".</li>
+<li>The site doesn't give a useful link (it is "8a.nu") for each page until reached individual climbs, or user pages.</li>
+<li>If a climb is logged with two different grades in the database, we will see it twice in the "area" list. Both links will go to the same place, however.</li>
+<li>This allows for users to accidentally spell climbs wrong and have them added to the DB wrong.</li>
+<li>Anonymous accounts must be filtered out (don't go to an actual logbook; just says "this user is anonymous").</li>
+</ul></li>
+</ol>
+
+<h3>We Need to Make a Crawler</h3>
+
+<ul>
+<li><a href="http://www.example.com/" title="Example">Stack Overflow Post</a></li>
+<li>Frames, wtf. </li>
+<li>Say we hard-code the starting places to get this data. We will start at an areas list of classics (e.g. the <a href="http://www.8a.nu/" title="Crawler">RRG</a>) (oh, wait. we don't have RESTful URLs)</li>
+</ul>
+
+<h4>Crawler Pseudocode<pre><code></h4>
+
+<pre><code>for area in areas: # This won't *yet* be done programatically. 
+                   # Too difficult, since we don't have RESTful URLs for these sites.
+    for line in climbs_list:
+        climbs.append(climb(line['url'])) # take in the url as a constructor arg. Constructor does the rest.
+                                          # Once you get to a climb's link, the url is relocatable 
+                                          # (i.e. not 8a.nu. Of course it is really long and ugly instead).
+</code></pre>
+
+<p></pre></code>
+</body>
+</html></p>
