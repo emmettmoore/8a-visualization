@@ -101,6 +101,10 @@ a.nav-bar:hover,a.nav-bar:active
 }
 
 .small-text {
-
 	font-size: 0.8em;
+}
+
+pre, code { 
+    font-family consolas, courier, monospace;
+    font-size: 0.95em;
 }

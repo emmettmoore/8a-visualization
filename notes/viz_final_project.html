@@ -8,7 +8,7 @@
 
 <h1>Visualization Final Project Ideas</h1>
 
-<h2>8a Visualization</h2>
+<h2><a href="http://www.8a.nu/" title="8a.nu">8a.nu</a> Visualization</h2>
 
 <h3>Possible Stories</h3>
 
@@ -17,6 +17,7 @@
 <li>Visualize areas that are soft vs. sandbagged (heatmap)</li>
 <li>(Even simpler) visualize traffic to different areas</li>
 <li>Visualize who travels to where</li>
+<li>Where people from certain areas typically climb.... Unique URL from "city score" page.</li>
 </ol>
 
 <h3>Complications</h3>
@@ -30,7 +31,10 @@
 <li>8a combines unreliable user data with poor organization.
 <ul>
 <li>Users log routes, and 8a adds a new climb to the database if there is not "collision".</li>
-<li>The site doesn't give a useful link (it is "8a.nu") for each page until reached individual climbs, or user pages.</li>
+<li>The site doesn't give a useful link (it is "8a.nu") for each page until reached individual climbs, or user pages.
+<ul>
+<li>This is a problem for Scrapy.. see below</li>
+</ul></li>
 <li>If a climb is logged with two different grades in the database, we will see it twice in the "area" list. Both links will go to the same place, however.</li>
 <li>This allows for users to accidentally spell climbs wrong and have them added to the DB wrong.</li>
 <li>Anonymous accounts must be filtered out (don't go to an actual logbook; just says "this user is anonymous").</li>
@@ -40,9 +44,18 @@
 <h3>We Need to Make a Crawler</h3>
 
 <ul>
-<li><a href="http://www.example.com/" title="Example">Stack Overflow Post</a></li>
-<li>Frames, wtf. </li>
-<li>Say we hard-code the starting places to get this data. We will start at an areas list of classics (e.g. the <a href="http://www.8a.nu/" title="Crawler">RRG</a>) (oh, wait. we don't have RESTful URLs)</li>
+<li><a href="http://www.example.com/" title="Example">SO How to Write a Crawler</a></li>
+<li>Frames, wtf. If a URL (not 8a.nu) is searched, it uses the URL as a field in html/body/form called "action". Action loads the new data, and changes the data in the tables.
+<ul>
+<li>We might have to take <a href="http://stackoverflow.com/questions/19433961/scrapy-hxs-select-not-selecting-all-results" title="Potential Problems with 8a's table generation">special considerations</a>, or just focus on one (or a few) climbing areas, using <code>curl</code> to grab the inital tables.
+<ul>
+<li>If we were to use <code>curl</code> then we would only be able to get the data in the links in the main table (i.e. the climb's info, and who sent it) if the data on those links were not "generated" by similar means to the data on the climbing area's main table.</li>
+<li>Of course, this is not the case so we need to figure out a way to generate the tables programmatically.</li>
+</ul></li>
+</ul></li>
+<li>Say we hard-code the starting places to get this data. We will start at an areas list of classics (e.g. the <a href="http://www.8a.nu/Scorecard/Search.aspx?HideSearchForm=1&amp;Mode=SIMPLE&amp;CragCountryCode=USA&amp;AscentType=0&amp;CragName=Red+River+Gorge" title="RRG">RRG</a>),</li>
+<li><a href="http://stackoverflow.com/questions/17431887/table-needs-to-be-scraped-with-scrapy" title="SO Scrapy Scraping tables">SO Scraping a Table with Scrapy</a></li>
+<li><a href="http://stackoverflow.com/questions/17447784/scrape-links-from-a-table-with-scrapy?rq=1" title="Scrape Links from Table with Scrapy">Scrape Links from Table with Scrapy</a></li>
 </ul>
 
 <h4>Crawler Pseudocode<pre><code></h4>
@@ -55,6 +68,12 @@
                                           # (i.e. not 8a.nu. Of course it is really long and ugly instead).
 </code></pre>
 
-<p></pre></code>
+<p></pre></code></p>
+
+<h3>Scraping Libraries</h3>
+
+<ul>
+<li><a href="http://scrapy.org/" title="Scrapy">Scrapy</a>
 </body>
-</html></p>
+</html></li>
+</ul>
