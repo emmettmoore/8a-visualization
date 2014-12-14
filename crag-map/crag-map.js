@@ -1,3 +1,5 @@
+
+
 var crag_map = new Datamap({
     element: document.getElementById('crag-map'),
     scope:   'usa',

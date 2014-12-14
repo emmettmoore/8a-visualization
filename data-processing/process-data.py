@@ -122,6 +122,8 @@ def cragsFromJson(dataPath):
             crag_avg_fairness = 0.
             crag_total_fairness = 0.
             cragsList.append(crag)
+        # filter out areas we don't have geo locations for
+        cragsList = [crag for crag in cragsList if crag['coordinates'] != None] 
     return cragsList
 
 def cragsFromPickle(dataPath):
