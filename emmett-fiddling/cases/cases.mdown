@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Cases</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+# Interesting Cases to Consider in Report
+
+## Outlying Climbs
+
+### When Grades Change
+-	Blue-Eyed-Honkey Jesus, listed as 7b+ at the Red River Gorge, has 112 "fair", 85 "soft", and 3 "hard" ascents out of a sample of 200 users. At 42.5%, this climb holds one of the highest percentages of soft attributions in the Red, so we went to investigate what might be the problem. 
+    -   As it turns out, it appears that it was downgraded from 7b+ to 7b in some people's eyes at one point, therefore making people log a lower grade in their log books. 
+    -   One user, who logged the route as a fair 7b+, argued that Blue Eyed Honkey Jesus is  "Too hard to be [7b] with the easy Supafly sitting next door at [7a+]." Supafly, however, has a very high percentage of soft ascents as well (23%). One possible conclusion here, then, is that grades are judged relative to their neighbors. Since Supfly is supposed to be a soft 7a+, and Blue Eyed Honkey Jesus is 2 grades harder, then it would be unfair to call Blue Eyed Honkey Jesus a 7b.
+-   Consectetur adipiscing elit
+-   Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+	1.	Ut enim ad minim veniam
+	2.	Quis nostrud exercitation ullamco labirs nisi ut aliquip ex ea commodo consequat
+
+-	Lorem Ipsum
+	1.	Dolor sit amet 
+	2.	Consectetur adipiscing elit
+	3.	Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+- [Example][1] 
+
+
+</body>
+</html>
+[1]: http://www.example.com/ "Example"
