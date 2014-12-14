@@ -3,23 +3,62 @@
 <head>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script>
-	function getSet(private, public, props) {
-		// Add a chainable getter-setter method to the public object for each property name of the private object in the props array (or single property if props is a string)
+	// function getSet(private, public, props) {
+	// 	// Add a chainable getter-setter method to the public object for each property name of the private object in the props array (or single property if props is a string)
 
-		if (!Array.isArray(props)) props = [props];
-		for (var i = props.length - 1; i >= 0; i--) {
-			var prop = props[i];
-			if (!(typeof prop == "string" || prop instanceof String)) {
-				console.error(prop, " is not a string (not a valid property name)");
-				continue;
-			}
+	// 	if (!Array.isArray(props)) props = [props];
+	// 	for (var i = props.length - 1; i >= 0; i--) {
+	// 		var prop = props[i];
+	// 		if (!(typeof prop == "string" || prop instanceof String)) {
+	// 			console.error(prop, " is not a string (not a valid property name)");
+	// 			continue;
+	// 		}
 
-			public[prop] = function(val) {
-				if (!arguments.length) return private[prop]
-				private[prop] = val;
-				return public;
-			}
+	// 		public[prop] = function(val) {
+	// 			if (!arguments.length) return private[prop]
+	// 			private[prop] = val;
+	// 			return public;
+	// 		}
+	// 	};
+	// }
+
+	function sandBagGraph() {
+		// Bound data should be an array of objects:
+		// [
+		//		{
+		//			"name": "",
+		//			"fairness": [-.8, 0, .2, ...]
+		//		}, ...
+		// ]
+
+		// var padding = 2;
+
+		function my(selection) {
+			selection.each(function(data) {
+				// var x = d3.ordinal.rangePoints()
+				// 	.domain(data.map(function(d) { return d.name }))
+				// 	.range([0, 100], padding)
+				// 	;
+
+				var sb = sandBag();
+
+				graphs = d3.select(this).selectAll(".sandbag").data( data.map(function(d) {return d.fairness}) );
+
+				graphs.enter()
+					.append("div")
+					.classed('sandbag', true)
+					// .style('height', "0%")
+					;
+
+				graphs
+					.call(sb)
+					// .transition()
+						// .style('height', "100%")
+					;
+			});
 		};
+
+		return my;
 	}
 
 	function sandBag() {
@@ -36,15 +75,22 @@
 
 		function my(selection) {
 			selection.each(function(data) {
-				container = d3.select(this).selectAll("div").data(data);
+				data.sort(d3.descending);	// rows added from top down, so start with most sandbagged
+				bars = d3.select(this).selectAll("div").data(data);
 
-				container.enter()
+				bars.exit().transition()
+					.style("height", "0%")
+					.remove()
+					;
+
+				bars.enter()
 					.append("div")
 					.style("width", "100%")
+					.style("height", "0%")
+					.style("background-color", 'white')
 					;
-				container.exit().remove();
 
-				container
+				bars.transition()
 					.style("height", (100 / data.length) +"%")
 					.style("background-color", color)
 					;
@@ -72,46 +118,57 @@
 
 	<style>
 		.sandbag {
-			width: 80px;
-			height: 300px;
+			width: 30px;
+			height: 150px;
 			display: inline-block;
-			margin: 50px;
+			margin: 10px;
+			border: 1px solid darkgray;
 		}
 	</style>
 </head>
 <body>
 
 <div>
-<div id="route1" class="sandbag"></div>
-<div id="route2" class="sandbag"></div>
+<!-- <div id="route1" class="sandbag"></div> -->
+<!-- <div id="route2" class="sandbag"></div> -->
 </div>
+
+<div id="sbg"></div>
 
 </body>
 
 <script>
-sb1 = sandBag()
-	.softColor('green');
+// sb1 = sandBag()
+// 	.softColor('green');
 
-sb2 = sandBag();
+// sb2 = sandBag();
 
-d3.select("#route1")
-	.datum([-1, -.3, -.2, -.15, -.02, 0, 0, 0, 0, 0, 0, 0, 0, .2, .6, .6])
-	.call(sb1)
+// d3.select("#route1")
+// 	.datum([-1, -.3, -.2, -.15, -.02, 0, 0, 0, 0, 0, 0, 0, 0, .2, .6, .6])
+// 	.call(sb1)
+// 	;
+// d3.select("#route2")
+// 	.datum([-.2, -.1, 0, 0, 0, 0, .2])
+// 	.call(sb2)
+// 	;
+
+var data = [
+	{
+		name: "the red",
+		fairness: [-.2, -.1, 0, 0, 0, 0, .2]
+	},
+	{
+		name: "the new",
+		fairness: [-1, -.3, -.2, -.15, -.02, 0, 0, 0, 0, 0, 0, 0, 0, .2, .6, .6]
+	}
+];
+
+graph = sandBagGraph();
+
+d3.select('#sbg')
+	.datum(data)
+	.call(graph)
 	;
-d3.select("#route2")
-	.datum([-.2, -.1, 0, 0, 0, 0, .2])
-	.call(sb2)
-	;
-
-
-// var bag = d3.select("#route1").selectAll("div")
-// 	.data([-.2, -.1, 0, 0, 0, 0, .2]);
-
-// bag.enter()
-// 	.append("div")
-
-// bag
-// 	.text(function(d) {return d});
 
 </script>
 
