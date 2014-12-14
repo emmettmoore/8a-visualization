@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script>
+	function getSet(private, public, props) {
+		// Add a chainable getter-setter method to the public object for each property name of the private object in the props array (or single property if props is a string)
+
+		if (!Array.isArray(props)) props = [props];
+		for (var i = props.length - 1; i >= 0; i--) {
+			var prop = props[i];
+			if (!(typeof prop == "string" || prop instanceof String)) {
+				console.error(prop, " is not a string (not a valid property name)");
+				continue;
+			}
+
+			public[prop] = function(val) {
+				if (!arguments.length) return private[prop]
+				private[prop] = val;
+				return public;
+			}
+		};
+	}
+
+	function sandBag() {
+		// A stacked-bar-chart-ish representation of the distribution of soft, fair, and hard
+		// Bound data should be floats from [-1, 1]: negative is soft, positive is hard, 0 is fair.
+
+		var softColor = 'blue',
+			hardColor = 'red';
+
+		var color = d3.scale.linear()
+			.domain([-1, 0, 1])
+			.range([softColor, 'white', hardColor])
+			;
+
+		function my(selection) {
+			selection.each(function(data) {
+				container = d3.select(this).selectAll("div").data(data);
+
+				container.enter()
+					.append("div")
+					.style("width", "100%")
+					;
+				container.exit().remove();
+
+				container
+					.style("height", (100 / data.length) +"%")
+					.style("background-color", color)
+					;
+
+			});
+		};
+
+		// getSet(sandBag, my, ['softColor', 'hardColor']);
+		my.softColor = function(val) {
+			if (!arguments.length) return softColor;
+			softColor = val;
+			color.range([softColor, 'white', hardColor]);
+			return my;
+		}
+		my.hardColor = function(val) {
+			if (!arguments.length) return hardColor;
+			hardColor = val;
+			color.range([softColor, 'white', hardColor]);
+			return my;
+		}
+		return my;
+	}
+
+	</script>
+
+	<style>
+		.sandbag {
+			width: 80px;
+			height: 300px;
+			display: inline-block;
+			margin: 50px;
+		}
+	</style>
+</head>
+<body>
+
+<div>
+<div id="route1" class="sandbag"></div>
+<div id="route2" class="sandbag"></div>
+</div>
+
+</body>
+
+<script>
+sb1 = sandBag()
+	.softColor('green');
+
+sb2 = sandBag();
+
+d3.select("#route1")
+	.datum([-1, -.3, -.2, -.15, -.02, 0, 0, 0, 0, 0, 0, 0, 0, .2, .6, .6])
+	.call(sb1)
+	;
+d3.select("#route2")
+	.datum([-.2, -.1, 0, 0, 0, 0, .2])
+	.call(sb2)
+	;
+
+
+// var bag = d3.select("#route1").selectAll("div")
+// 	.data([-.2, -.1, 0, 0, 0, 0, .2]);
+
+// bag.enter()
+// 	.append("div")
+
+// bag
+// 	.text(function(d) {return d});
+
+</script>
+
+</html>
