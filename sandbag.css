@@ -1,0 +1,21 @@
+.bar {
+	display: inline-block;
+	margin: 0 10px 0 10px;
+	font: 10px sans-serif;
+}
+.bar-highlighted {
+	font-weight: bold;
+	border: 1px solid aqua;
+}
+.bar-label {
+	position: relative;
+	top: 5px;
+}
+.sandbag {
+	height: 100%;
+	width: 30px;
+	margin: 0 auto;
+}
+.sandbag > div:first-child {
+	border-radius: 2px 2px 0 0;
+}

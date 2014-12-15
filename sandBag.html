@@ -3,197 +3,9 @@
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="lib/tracker.js"></script>
 <script src="lib/reactive-var.js"></script>
-<!-- <script src="lib/radio.min.js"></script> -->
-	<script>
-
-	function hasdata(d) {
-		return function(_d, i) {
-			return d === _d ? this : null;
-		}
-	}
-	function setRef(activeVar, functorVal) {
-		// Function factory that's useful to pass as a d3 callback (to .on, etc)
-		// Returned function takes d, i and sets activeVar to an object {d: d, i: i}
-		// Optionally, specify a functorVal, and the returned callback will just set the activeVar to that value
-		if (arguments.length == 2) {
-			return function() { activeVar.set(functorVal) };
-		} else {
-			return function(d, i) {
-				activeVar.set({
-					// selection: d3.select(this),
-					d: d,
-					i: i
-				});
-			}
-		}
-	}
-
-	function sandBagGraph() {
-		// Bound data should be an array of objects:
-		// [
-		//		{
-		//			"name": "",
-		//			"fairness": [-.8, 0, .2, ...]
-		//		}, ...
-		// ]
-
-		var height = d3.scale.linear()
-			.range([0, 100])
-
-		var onHover = function(d, i){};
-		var offHover = function(d, i){};
-		var sb = sandBag();
-
-		function my(selection) {
-			selection.each(function(data) {
-				var maxRows = d3.max(data, function(d) { return d.fairness.length });
-				height.domain([0, maxRows]);
-
-
-				var graphs = d3.select(this).selectAll(".bar").data( data );
-
-				graphs.exit().remove();
-
-				var newGraphs = graphs.enter()
-					.append("div")
-					.classed('bar', true)
-					.style('height', "100%")
-					.on('mouseenter', onHover)
-					.on('mouseleave', offHover)
-					;
-				newGraphs
-					.append("div")
-					.classed("sandbag", true)
-					;
-				newGraphs
-					.append("div")
-					.classed("bar-label", true)
-					;
-
-				graphs.selectAll(".bar-label")
-					.text(function(d) { return d.name; } );
-				// graphs
-					// .style('height', function(d) { return height(d.fairness.length) + "%" });
-
-				var allGraphs = graphs.selectAll(".sandbag").data(function(d) {
-					return [d.fairness];
-				});
-				allGraphs
-					// .datum(function(d) { 
-					// 	return d.fairness;
-					// })
-					.call(sb);
-			});
-		};
-
-		my.hover = function(onhover, offhover) {
-			offhover = offhover || function(){};
-			// if (!arguments.length) return onHover;
-			onHover = onhover;
-			offHover = offhover;
-			return my;
-		}
-
-		my.highlighter = function(d, i) {
-			return function(selection) {
-				if (!d && !i) {
-					selection.selectAll(".bar-highlighted").classed("bar-highlighted", false);
-				} else {
-					var bars = selection.selectAll(".bar");
-					if (!i) {
-						var bar = bars.select(hasdata(d));
-					} else {
-						var bar = d3.select(bars[0][i]);
-					}
-					bar.classed("bar-highlighted", true);
-				}
-			}
-		}
-
-		// my.sameHeight = function(val) {
-		// 	if (val) height.range([100, 100])
-		// 	else height.range([0, 100])
-		// }
-
-		return my;
-	}
-
-	function sandBag() {
-		// A stacked-bar-chart-ish representation of the distribution of soft, fair, and hard
-		// Bound data should be floats from [-1, 1]: negative is soft, positive is hard, 0 is fair.
-
-		var softColor = 'blue',
-			hardColor = 'red';
-
-		var color = d3.scale.linear()
-			.domain([-1, 0, 1])
-			.range([softColor, 'rgb(245, 245, 245)', hardColor])
-			;
-
-		function my(selection) {
-			selection.each(function(data) {
-				data.sort(d3.descending);	// rows added from top down, so start with most sandbagged
-				bars = d3.select(this).selectAll("div").data(data);
-
-				bars.exit().remove()
-
-				bars.enter()
-					.append("div")
-					.style("width", "100%")
-					;
-
-				bars
-					.style("height", (100 / data.length) +"%")
-					.style("background-color", color)
-					;
-
-			});
-		};
-
-		// getSet(sandBag, my, ['softColor', 'hardColor']);
-		my.softColor = function(val) {
-			if (!arguments.length) return softColor;
-			softColor = val;
-			color.range([softColor, 'white', hardColor]);
-			return my;
-		}
-		my.hardColor = function(val) {
-			if (!arguments.length) return hardColor;
-			hardColor = val;
-			color.range([softColor, 'white', hardColor]);
-			return my;
-		}
-		return my;
-	}
-
-	</script>
-
+<script src="sandbag.js"></script>
+<link rel="stylesheet" href="sandbag.css" />
 	<style>
-		.bar {
-			display: inline-block;
-			margin: 0 10px 0 10px;
-			font: 10px sans-serif;
-		}
-		.bar-highlighted {
-			font-weight: bold;
-			border: 1px solid aqua;
-		}
-		.bar-label {
-			position: relative;
-			top: 5px;
-		}
-		.sandbag {
-			height: 100%;
-			width: 30px;
-			margin: 0 auto;
-			/*height: 150px;*/
-			/*display: inline-block;*/
-			/*margin: 10px;*/
-			/*border: 1px solid darkgray;*/
-		}
-		.sandbag > div:first-child {
-			border-radius: 2px 2px 0 0;
-		}
 		#sbg {
 			height: 200px;
 			border-bottom: 1px solid lightgray;
@@ -206,17 +18,12 @@
 </head>
 <body>
 
-<div>
-<!-- <div id="route1" class="sandbag"></div> -->
-<!-- <div id="route2" class="sandbag"></div> -->
-</div>
-
-<div id="sbg"></div>
-<div id="names"></div>
-<button onclick="addData()">Add data</button>
-<button onclick="removeData()">Remove data</button>
-<button onclick="incrementData(.2)">Increase data</button>
-<button onclick="incrementData(-.2)">Decrease data</button>
+	<div id="sbg"></div>
+	<div id="names"></div>
+	<button onclick="addData()">Add data</button>
+	<button onclick="removeData()">Remove data</button>
+	<button onclick="incrementData(.2)">Increase data</button>
+	<button onclick="incrementData(-.2)">Decrease data</button>
 
 <script>
 var hovered = new ReactiveVar();
