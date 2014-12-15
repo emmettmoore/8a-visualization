@@ -7,6 +7,20 @@ import ijson
 import json
 from pygeocoder import Geocoder
 
+incorrect_locations = {
+    "Gunks": [41.7475, -74.0794],
+    "Yosemite": [37.8651, -119.5383],
+    "Mazama": [48.5921, -120.4040],
+    "Maple Canyon": [39.5554, -111.6777],
+    "American Fork": [40.4336, -111.7391],
+    "Indian creek": [40.6502, -111.3527],
+    "Logan Canyon": [41.7402, -111.7938],
+    "Rifle": [39.5448,-107.7849],
+    "Clear Creek Canyon": [39.7527647,-105.2344],
+    "Shelf Road": [38.7253276,-105.1727715],
+    "Rat Cave": [45.51307, -122.61778],
+}
+
 def print_err(msg):
     print(msg, file=sys.stderr)
 
@@ -75,22 +89,26 @@ def cragsFromJson(dataPath):
     num_hard = 0
     num_soft = 0
     num_fair = 0
+    total_ascents = 0
     with open(dataPath) as f:
         crags = ijson.items(f, 'crags.item')
         for crag in crags:
-
             # geocode the crag
             if 'location' in crag:
                 location = crag['location']
                 geocoded = Geocoder.geocode(location)
                 print( "{} ({}) --> {}".format(crag['name'], crag['location'], geocoded) )
-                crag["coordinates"] = geocoded[0].coordinates
+                if crag['name'] not in incorrect_locations:
+                    crag["coordinates"] = geocoded[0].coordinates
+                else:
+                    crag["coordinates"] = incorrect_locations[crag['name']]
             else:
                 crag['coordinates'] = None
             for route in crag['route']:
                 # get softness of route
                 route.update( softness(route['ascents'], route['grade'], crag['name'] ))
                 crag_total_fairness += route['fairness']
+                total_ascents += len(route['ascents'])
                 if route['fairness'] > FAIR_THRESHOLD:
                     num_hard+= 1;
                 elif route['fairness'] < (-1 * FAIR_THRESHOLD):
@@ -113,14 +131,19 @@ def cragsFromJson(dataPath):
             print("num_soft: {}".format(num_soft))
             print("num_hard: {}".format(num_hard))
             print("num_fair: {}".format(num_fair))
+            print("total_ascents: {}".format(total_ascents))
             crag_avg_fairness = crag_total_fairness / len(crag['route'])
-            crag.update({"fairness": crag_avg_fairness, 'num_soft': num_soft, 'num_hard': num_hard, 'num_fair': num_fair})
+            crag.update({"fairness": crag_avg_fairness, 'num_soft': num_soft, 'num_hard': num_hard, 'num_fair': num_fair, 'total_ascents': total_ascents})
             print("crag: {name}, fairness: {fairness}".format(**crag))
+            # add total ascents for crag. Needed to calculate area's popularity
+
+            # reset stat counters
             num_soft = 0
             num_hard = 0
             num_fair = 0
             crag_avg_fairness = 0.
             crag_total_fairness = 0.
+            total_ascents = 0
             cragsList.append(crag)
         # filter out areas we don't have geo locations for
         cragsList = [crag for crag in cragsList if crag['coordinates'] != None] 

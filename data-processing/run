@@ -1,0 +1,2 @@
+python process-data.py ../data/8a-gl-filtered.json
+cat json/8a-gl-filtered.json | python -m json.tool > ../crag-map/data/8a-gl-filtered.json
