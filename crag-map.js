@@ -9,7 +9,7 @@ var color = d3.scale.linear()
 
 var fills = {}
 var fillKeys = {}
-var url = "data/8a-gl-filtered.json";
+var url = "/prod-data/8a-gl-filtered.json";
 $.getJSON(url, function(response) {
     var raw_crags = response;
     populate_fills(raw_crags);
