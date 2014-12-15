@@ -19,6 +19,7 @@ incorrect_locations = {
     "Clear Creek Canyon": [39.7527647,-105.2344],
     "Shelf Road": [38.7253276,-105.1727715],
     "Rat Cave": [45.51307, -122.61778],
+    "Farley": [42.5972215,-72.446389],
 }
 
 def print_err(msg):
@@ -107,27 +108,25 @@ def cragsFromJson(dataPath):
             for route in crag['route']:
                 # get softness of route
                 route.update( softness(route['ascents'], route['grade'], crag['name'] ))
-                crag_total_fairness += route['fairness']
                 total_ascents += len(route['ascents'])
-                if route['fairness'] > FAIR_THRESHOLD:
-                    num_hard+= 1;
-                elif route['fairness'] < (-1 * FAIR_THRESHOLD):
-                    num_soft+= 1;
-                else:
-                    num_fair+= 1;
+                crag_total_fairness += route['fairness']
                 # remove unneded fields to reduce size of output
                 for field in ['ascents', 'index', 'thumbs_up', 'f_os', 'crag']:
                     del route[field]
 
                 if (route['total'] == 0):
                     print( "No ascents for {}".format(route['name'].encode('utf-8')) )
-                    # TODO: delete route in that case
                 else:
-                    pass
-                    #print( "   {name} ({grade}): {soft} soft, {fair} fair, {hard} hard / {total}".format(**route) )
+                    if route['fairness'] > FAIR_THRESHOLD:
+                        num_hard+= 1;
+                    elif route['fairness'] < (-1 * FAIR_THRESHOLD):
+                        num_soft+= 1;
+                    else:
+                        num_fair+= 1;
+                    num_routes =  num_fair + num_soft + num_hard
             crag['route'] = [route for route in crag['route'] if route['total'] > 0]
             print("crag_total_fairness {}".format(crag_total_fairness))
-            print("num_routes: {}".format(len(crag['route'])))
+            print("num_routes: {}".format(num_routes))
             print("num_soft: {}".format(num_soft))
             print("num_hard: {}".format(num_hard))
             print("num_fair: {}".format(num_fair))
@@ -147,6 +146,8 @@ def cragsFromJson(dataPath):
             cragsList.append(crag)
         # filter out areas we don't have geo locations for
         cragsList = [crag for crag in cragsList if crag['coordinates'] != None] 
+        # filter out areas that don't have at least 750 ascents
+        cragsList = [crag for crag in cragsList if crag['total_ascents'] > 750] 
     return cragsList
 
 def cragsFromPickle(dataPath):
