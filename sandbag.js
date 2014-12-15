@@ -26,7 +26,7 @@ function sandBagGraph() {
 	// [
 	//		{
 	//			"name": "",
-	//			"fairness": [-.8, 0, .2, ...]
+	//			"route": [-.8, 0, .2, ...]
 	//		}, ...
 	// ]
 
@@ -39,7 +39,7 @@ function sandBagGraph() {
 
 	function my(selection) {
 		selection.each(function(data) {
-			var maxRows = d3.max(data, function(d) { return d.fairness.length });
+			var maxRows = d3.max(data, function(d) { return d.route.length });
 			height.domain([0, maxRows]);
 
 
@@ -66,9 +66,11 @@ function sandBagGraph() {
 			graphs.selectAll(".bar-label")
 				.text(function(d) { return d.name; } );
 			// graphs
-				// .style('height', function(d) { return height(d.fairness.length) + "%" });
+				// .style('height', function(d) { return height(d.route.length) + "%" });
 
-			graphs.selectAll(".sandbag").data(function(d) { return [d.fairness]; })
+			graphs.selectAll(".sandbag").data(function(d) { 
+				return [d.route]; 
+			})
 				.call(sb);
 		});
 	};
@@ -78,6 +80,11 @@ function sandBagGraph() {
 		// if (!arguments.length) return onHover;
 		onHover = onhover;
 		offHover = offhover;
+		return my;
+	}
+	my.fairnessAccessor = function(fun) {
+		if (!arguments.length) return sb.accessor();
+		sb.accessor(fun);
 		return my;
 	}
 
@@ -112,6 +119,8 @@ function sandBag() {
 	var softColor = 'blue',
 		hardColor = 'red';
 
+	function fairness(d, i) { return d; };
+
 	var color = d3.scale.linear()
 		.domain([-1, 0, 1])
 		.range([softColor, 'rgb(245, 245, 245)', hardColor])
@@ -119,7 +128,11 @@ function sandBag() {
 
 	function my(selection) {
 		selection.each(function(data) {
-			data.sort(d3.descending);	// rows added from top down, so start with most sandbagged
+			data.sort(function(a, b) {
+				a = fairness(a);
+				b = fairness(b);
+				return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
+			});	// rows added from top down, so start with most sandbagged
 			bars = d3.select(this).selectAll("div").data(data);
 
 			bars.exit().remove()
@@ -131,12 +144,19 @@ function sandBag() {
 
 			bars
 				.style("height", (100 / data.length) +"%")
-				.style("background-color", color)
+				.style("background-color", function(d, i) {
+					return color( fairness(d, i) )
+				})
 				;
 
 		});
 	};
 
+	my.accessor = function(fun) {
+		if (!arguments.length) return fairness;
+		fairness = fun;
+		return my;
+	}
 	my.softColor = function(val) {
 		if (!arguments.length) return softColor;
 		softColor = val;

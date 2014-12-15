@@ -10,11 +10,27 @@ var color = d3.scale.linear()
 var fills = {}
 var fillKeys = {}
 var url = "/prod-data/8a-gl-filtered.json";
-$.getJSON(url, function(response) {
+
+d3.json(url, function(err, response) {
     var raw_crags = response;
+    console.log(raw_crags);
     populate_fills(raw_crags);
     load_crags(raw_crags);
+    graph_all_crags(raw_crags);
 });
+
+function graph_all_crags(data) {
+    grapher = sandBagGraph()
+      .fairnessAccessor(function(d, i) {
+        return d.fairness;
+      })
+      ;
+
+    graph = d3.select("#all-crags-graph")
+      .datum(data)
+      .call(grapher)
+      ;
+}
 
 function populate_fills(raw_crags) {
     for (var i=0; i< raw_crags.length; i++) {
@@ -25,10 +41,6 @@ function populate_fills(raw_crags) {
     fills['defaultFill'] = 'white';
 }
 
-function sigmoid(t) {
-    return 1/(1+Math.pow(Math.E, -t));
-}
-
 function get_radius(num_ascents) {
     return Math.max(30 * (num_ascents / NUM_RED_ASCENTS), 3.8) ;
 }
@@ -37,19 +49,6 @@ function load_crags(raw_crags) {
     var crag_map = new Datamap({
         element: document.getElementById('crag-map'),
         scope:   'usa',
-/*        fills: {
-            'RRG': '#7a8cff',
-            'NRG': '#ffe7d8',
-            'RUM': '#ff3240',//#ffa89d
-            'highlightColor': '#FFFF00',
-            defaultFill: 'rgba(229,255,218,0.9)' //248 255 231
-        }, 
-        data: {
-            'RRG': {fillKey: 'RRG'},
-            'NRG': {fillKey: 'NRG'},
-            'RUM': {fillKey: 'RUM'},
-       },
-*/
         fills: fills,
         fillKeys: fillKeys,
         geographyConfig: {
