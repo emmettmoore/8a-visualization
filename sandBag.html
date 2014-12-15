@@ -40,9 +40,18 @@
 				// 	.range([0, 100], padding)
 				// 	;
 
+				// var xAxis = d3.svg.axes()
+
+				var here = d3.select(this);
+				
+				// var newAxes = here.selectAll(".axis").data().enter();
+				// 	newAxes.append("svg")
+				// 		.attr("class", "x axis")
+				// 		.call(xAxis);
+
 				var sb = sandBag();
 
-				graphs = d3.select(this).selectAll(".sandbag").data( data.map(function(d) {return d.fairness}) );
+				var graphs = here.selectAll(".sandbag").data( data.map(function(d) {return d.fairness}) );
 
 				graphs.enter()
 					.append("div")
@@ -70,7 +79,7 @@
 
 		var color = d3.scale.linear()
 			.domain([-1, 0, 1])
-			.range([softColor, 'white', hardColor])
+			.range([softColor, 'rgb(245, 245, 245)', hardColor])
 			;
 
 		function my(selection) {
@@ -122,7 +131,10 @@
 			height: 150px;
 			display: inline-block;
 			margin: 10px;
-			border: 1px solid darkgray;
+			/*border: 1px solid darkgray;*/
+		}
+		.sandbag > div:first-child {
+			border-radius: 2px 2px 0 0;
 		}
 	</style>
 </head>
