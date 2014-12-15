@@ -28,25 +28,6 @@
 		}
 	}
 
-	// function getSet(private, public, props) {
-	// 	// Add a chainable getter-setter method to the public object for each property name of the private object in the props array (or single property if props is a string)
-
-	// 	if (!Array.isArray(props)) props = [props];
-	// 	for (var i = props.length - 1; i >= 0; i--) {
-	// 		var prop = props[i];
-	// 		if (!(typeof prop == "string" || prop instanceof String)) {
-	// 			console.error(prop, " is not a string (not a valid property name)");
-	// 			continue;
-	// 		}
-
-	// 		public[prop] = function(val) {
-	// 			if (!arguments.length) return private[prop]
-	// 			private[prop] = val;
-	// 			return public;
-	// 		}
-	// 	};
-	// }
-
 	function sandBagGraph() {
 		// Bound data should be an array of objects:
 		// [
@@ -61,6 +42,7 @@
 
 		var onHover = function(d, i){};
 		var offHover = function(d, i){};
+		var sb = sandBag();
 
 		function my(selection) {
 			selection.each(function(data) {
@@ -68,12 +50,14 @@
 				height.domain([0, maxRows]);
 
 
-				var graphs = d3.select(this).selectAll(".bar").data( data, function(d) {return d.name;} );
+				var graphs = d3.select(this).selectAll(".bar").data( data );
+
+				graphs.exit().remove();
 
 				var newGraphs = graphs.enter()
 					.append("div")
 					.classed('bar', true)
-					.style('height', function(d) { return height(d.fairness.length) + "%" })
+					.style('height', "100%")
 					.on('mouseenter', onHover)
 					.on('mouseleave', offHover)
 					;
@@ -84,13 +68,20 @@
 				newGraphs
 					.append("div")
 					.classed("bar-label", true)
-					.text(function(d) { return d.name; } )
 					;
-				
-				var sb = sandBag();
-				graphs.selectAll(".sandbag")
-					.datum(function(d) { 
-						return d.fairness; })
+
+				graphs.selectAll(".bar-label")
+					.text(function(d) { return d.name; } );
+				// graphs
+					// .style('height', function(d) { return height(d.fairness.length) + "%" });
+
+				var allGraphs = graphs.selectAll(".sandbag").data(function(d) {
+					return [d.fairness];
+				});
+				allGraphs
+					// .datum(function(d) { 
+					// 	return d.fairness;
+					// })
 					.call(sb);
 			});
 		};
@@ -222,15 +213,21 @@
 
 <div id="sbg"></div>
 <div id="names"></div>
+<button onclick="addData()">Add data</button>
+<button onclick="removeData()">Remove data</button>
+<button onclick="incrementData(.2)">Increase data</button>
+<button onclick="incrementData(-.2)">Decrease data</button>
 
 <script>
 var hovered = new ReactiveVar();
-
-var data = [
+var data = new ReactiveVar([
 	{
 		name: "the red",
 		fairness: [-.2, -.1, 0, 0, 0, 0, .2]
-	},
+	}
+]);
+
+var newData = [
 	{
 		name: "the new river gorge",
 		fairness: [-1, -.3, -.2, -.15, -.02, 0, 0, 0, 0, 0, 0, 0, 0, .2, .6, .6]
@@ -242,7 +239,6 @@ var data = [
 		fairness: [-.2,0,0,.03,.05,.06,.1,.1,.2,.2,.5,.6,.7,.7,.8,.9,.95]
 	}
 ];
-
 
 graph = sandBagGraph();
 
@@ -261,6 +257,26 @@ d3.select("#names").selectAll('p').data(data).enter()
 	.on("mouseleave", setRef(hovered, null))
 	;
 
+Tracker.autorun(function updateGraphData() {
+	var d = data.get();
+	sbg.datum(d)
+		.call(graph);
+});
+Tracker.autorun(function updateTextData() {
+	var d = data.get();
+	var names = d3.select("#names").selectAll('p').data(d);
+
+	names.enter()
+		.append("p")
+		.on("mouseenter", setRef(hovered))
+		.on("mouseleave", setRef(hovered, null))
+		;
+
+	names
+		.text(function(d) { return d.name })
+
+	names.exit().remove()
+})
 Tracker.autorun(function updateGraphHighlighted() {
 	var ref = hovered.get();
 	if (!ref) {
@@ -277,7 +293,28 @@ Tracker.autorun(function updateTextHighlighted() {
 		var want = d3.selectAll("#names p").select(hasdata(ref.d))
 		want.classed("highlighted", true);
 	}
-})
+});
+
+function addData() {
+	var currentData = data.get();
+	currentData.push( newData.pop() );
+	data.set(currentData);
+}
+function removeData() {
+	var currentData = data.get();
+	newData.push( currentData.pop() );
+	data.set(currentData);
+}
+function incrementData(amt) {
+	var currentData = data.get();
+	for (var i = currentData.length - 1; i >= 0; i--) {
+		var area = currentData[i];
+		for (var j = area.fairness.length - 1; j >= 0; j--) {
+			area.fairness[j] = area.fairness[j] + amt;
+		};
+	};
+	data.set(currentData);
+}
 
 </script>
 
