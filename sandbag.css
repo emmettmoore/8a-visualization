@@ -13,11 +13,11 @@
 	position: absolute;
 	transform: rotate(45deg);
 	text-align: left;
-	width: 200px;
+	width: 150px;
 	transform-origin: left bottom;
 }
-.bar-label-vert {
-	
+.bar:hover .bar-label {
+	font-weight: bold;
 }
 .sandbag {
 	height: 100%;

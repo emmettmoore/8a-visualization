@@ -42,12 +42,14 @@ function populate_fills(raw_crags) {
 }
 
 function get_radius(num_ascents) {
-    return Math.max(30 * (num_ascents / NUM_RED_ASCENTS), 3.8) ;
+    return Math.max(30 * (num_ascents / NUM_RED_ASCENTS), 4.1) ;
 }
 
 function load_crags(raw_crags) {
     var crag_map = new Datamap({
         element: document.getElementById('crag-map'),
+        // height: 600,
+        // width: 400,
         scope:   'usa',
         fills: fills,
         fillKeys: fillKeys,
@@ -67,12 +69,13 @@ function load_crags(raw_crags) {
     });
     crags = [];
     for (var i=0; i< raw_crags.length; i++) {
+        var crag = raw_crags[i];
         crags.push({
-              name: raw_crags[i]['name'],
-              radius: get_radius(raw_crags[i]['total_ascents']),
-              fillKey: raw_crags[i]['name'],
-              latitude: raw_crags[i]["coordinates"][0],
-              longitude: raw_crags[i]["coordinates"][1],
+              name: crag['name'],
+              radius: get_radius(crag['total_ascents']),
+              fillKey: crag['name'],
+              latitude: crag["coordinates"][0],
+              longitude: crag["coordinates"][1],
               });
     }
 /*

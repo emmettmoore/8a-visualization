@@ -74,7 +74,7 @@ function sandBagGraph() {
 			graphs
 				.style("width", barWidth+"%")
 				.style("margin", "0 "+barMargin+"%")
-				// .style('height', function(d) { return height(d.route.length) + "%" });
+				.style('height', function(d) { return height(d.route.length) + "%" });
 
 			graphs.selectAll(".sandbag").data(function(d) { 
 				return [d.route]; 
