@@ -55,4 +55,4 @@
 [8]: http://stackoverflow.com/questions/17447784/scrape-links-from-a-table-with-scrapy?rq=1 "Scrape Links from Table with Scrapy"
 [9]: http://bl.ocksplorer.org "blocksplorer.org"
 [10]: https://github.com/mbostock/ "D3 Notes"
-[11]: http://www.climbing.com/climber/red-vs-new/ 'Red vs. New'
+[11]: http://www.climbing.com/climber/red-vs-new/ "Red vs. New"
