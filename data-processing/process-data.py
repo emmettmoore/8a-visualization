@@ -34,14 +34,14 @@ def softness(ascents, grade, crag):
     fairness = 0.
     for ascent in ascents:
         if not type(ascent) is dict:
-            print_err( "ERROR: ascent is a {}: {} in crag {}".format(type(ascent), ascent, crag ))
+            # print_err( "ERROR: ascent is a {}: {} in crag {}".format(type(ascent), ascent, crag ))
             continue
 
         asc_grade = ascent['grade']
         asc_comment = ascent['comment']
 
         if not asc_grade[0].isdigit():
-            print_err( "Not a real grade: {}".format(asc_grade) )
+            # print_err( "Not a real grade: {}".format(asc_grade) )
             continue
 
         # grades are lexicographically comparable 
@@ -105,6 +105,24 @@ def cragsFromJson(dataPath):
                     crag["coordinates"] = incorrect_locations[crag['name']]
             else:
                 crag['coordinates'] = None
+            # merge routes with similar names
+            route_keys = []
+            orig_name = {}
+            to_del = []
+            for i, route in enumerate(crag['route']):
+                key_name = route['name'].replace(" ", "").replace("\'", "").replace("\"", "").lower()
+                if key_name in route_keys:
+                    try:
+                        print ("                                            Route {} already in list as {}".format(route['name'].encode('utf-8'), orig_name[key_name]))
+                    except UnicodeEncodeError:
+                        pass
+                    if type(crag['route'][i]['ascents']) is list and type(route['ascents']) is list:
+                        crag['route'][i]['ascents'].append(route['ascents'])
+                        to_del = [i] + to_del
+                else:
+                    orig_name[key_name] = route['name']
+                    route_keys.append(key_name)
+
             for route in crag['route']:
                 # get softness of route
                 route.update( softness(route['ascents'], route['grade'], crag['name'] ))
@@ -115,7 +133,8 @@ def cragsFromJson(dataPath):
                     del route[field]
 
                 if (route['total'] == 0):
-                    print( "No ascents for {}".format(route['name'].encode('utf-8')) )
+                    pass
+                    #print( "No ascents for {}".format(route['name'].encode('utf-8')) )
                 else:
                     if route['fairness'] > FAIR_THRESHOLD:
                         num_hard+= 1;

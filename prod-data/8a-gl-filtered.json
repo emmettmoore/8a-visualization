@@ -7287,7 +7287,7 @@
                 "total": 15.0
             }
         ],
-        "total_ascents": 8158
+        "total_ascents": 8173
     },
     {
         "coordinates": [
@@ -9082,7 +9082,7 @@
                 "total": 12.0
             }
         ],
-        "total_ascents": 7721
+        "total_ascents": 7722
     },
     {
         "coordinates": [
@@ -12712,7 +12712,7 @@
                 "total": 7.0
             }
         ],
-        "total_ascents": 5280
+        "total_ascents": 5288
     },
     {
         "coordinates": [
@@ -16322,7 +16322,7 @@
                 "total": 5.0
             }
         ],
-        "total_ascents": 4263
+        "total_ascents": 4264
     },
     {
         "coordinates": [
@@ -18217,7 +18217,7 @@
                 "total": 3.0
             }
         ],
-        "total_ascents": 2222
+        "total_ascents": 2226
     },
     {
         "coordinates": [
@@ -20032,7 +20032,7 @@
                 "total": 7.0
             }
         ],
-        "total_ascents": 3543
+        "total_ascents": 3550
     },
     {
         "coordinates": [
@@ -21827,7 +21827,7 @@
                 "total": 3.0
             }
         ],
-        "total_ascents": 3082
+        "total_ascents": 3090
     },
     {
         "coordinates": [
@@ -23492,7 +23492,7 @@
                 "total": 3.0
             }
         ],
-        "total_ascents": 1992
+        "total_ascents": 2000
     },
     {
         "coordinates": [
@@ -25297,7 +25297,7 @@
                 "total": 3.0
             }
         ],
-        "total_ascents": 2368
+        "total_ascents": 2371
     },
     {
         "coordinates": [
@@ -27122,7 +27122,7 @@
                 "total": 5.0
             }
         ],
-        "total_ascents": 1900
+        "total_ascents": 1904
     },
     {
         "coordinates": [
@@ -28817,7 +28817,7 @@
                 "total": 4.0
             }
         ],
-        "total_ascents": 2419
+        "total_ascents": 2426
     },
     {
         "coordinates": [
@@ -30602,7 +30602,7 @@
                 "total": 2.0
             }
         ],
-        "total_ascents": 2221
+        "total_ascents": 2223
     },
     {
         "coordinates": [
@@ -31927,7 +31927,7 @@
                 "total": 2.0
             }
         ],
-        "total_ascents": 2833
+        "total_ascents": 2836
     },
     {
         "coordinates": [
@@ -33652,7 +33652,7 @@
                 "total": 4.0
             }
         ],
-        "total_ascents": 1838
+        "total_ascents": 1842
     },
     {
         "coordinates": [
@@ -35337,7 +35337,7 @@
                 "total": 2.0
             }
         ],
-        "total_ascents": 1632
+        "total_ascents": 1641
     },
     {
         "coordinates": [
@@ -37012,7 +37012,7 @@
                 "total": 3.0
             }
         ],
-        "total_ascents": 2022
+        "total_ascents": 2034
     },
     {
         "coordinates": [
@@ -38627,7 +38627,7 @@
                 "total": 49.0
             }
         ],
-        "total_ascents": 2254
+        "total_ascents": 2263
     },
     {
         "coordinates": [
@@ -40292,7 +40292,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 1378
+        "total_ascents": 1390
     },
     {
         "coordinates": [
@@ -42137,7 +42137,7 @@
                 "total": 2.0
             }
         ],
-        "total_ascents": 942
+        "total_ascents": 946
     },
     {
         "coordinates": [
@@ -43732,7 +43732,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 928
+        "total_ascents": 942
     },
     {
         "coordinates": [
@@ -45457,7 +45457,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 1032
+        "total_ascents": 1041
     },
     {
         "coordinates": [
@@ -47182,7 +47182,7 @@
                 "total": 2.0
             }
         ],
-        "total_ascents": 1393
+        "total_ascents": 1404
     },
     {
         "coordinates": [
@@ -49027,7 +49027,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 1262
+        "total_ascents": 1272
     },
     {
         "coordinates": [
@@ -50892,7 +50892,1842 @@
                 "total": 2.0
             }
         ],
-        "total_ascents": 1485
+        "total_ascents": 1489
+    },
+    {
+        "coordinates": [
+            42.2432451,
+            -113.8819595
+        ],
+        "fairness": 0.08235832794656325,
+        "location": "Oakley/Idaho",
+        "name": "City of Rocks",
+        "num_fair": 119,
+        "num_hard": 41,
+        "num_soft": 22,
+        "route": [
+            {
+                "avg_stars": "2,1",
+                "fair": 26.0,
+                "fairness": -0.125,
+                "grade": "7a+",
+                "hard": 2.0,
+                "name": "Gemini",
+                "soft": 4.0,
+                "total": 32.0
+            },
+            {
+                "avg_stars": "1,9",
+                "fair": 20.0,
+                "fairness": 0.125,
+                "grade": "6b",
+                "hard": 3.0,
+                "name": "Colossus",
+                "soft": 1.0,
+                "total": 24.0
+            },
+            {
+                "avg_stars": "2,6",
+                "fair": 10.0,
+                "fairness": 0.2857142857142857,
+                "grade": "6c+",
+                "hard": 4.0,
+                "name": "Crack of Doom",
+                "soft": 0.0,
+                "total": 14.0
+            },
+            {
+                "avg_stars": "2,1",
+                "fair": 14.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Thin Slice",
+                "soft": 0.0,
+                "total": 14.0
+            },
+            {
+                "avg_stars": "2,1",
+                "fair": 12.0,
+                "fairness": -0.29411764705882354,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Rollercoaster",
+                "soft": 5.0,
+                "total": 17.0
+            },
+            {
+                "avg_stars": "2,4",
+                "fair": 13.0,
+                "fairness": 0.125,
+                "grade": "6c",
+                "hard": 2.0,
+                "name": "Cairo",
+                "soft": 1.0,
+                "total": 16.0
+            },
+            {
+                "avg_stars": "1,9",
+                "fair": 8.0,
+                "fairness": 0.3333333333333333,
+                "grade": "6a",
+                "hard": 4.0,
+                "name": "Coffee and Cornflakes",
+                "soft": 0.0,
+                "total": 12.0
+            },
+            {
+                "avg_stars": "2,3",
+                "fair": 8.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 1.0,
+                "name": "Bloody Fingers",
+                "soft": 1.0,
+                "total": 10.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 7.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 2.0,
+                "name": "She's The Bosch",
+                "soft": 2.0,
+                "total": 11.0
+            },
+            {
+                "avg_stars": "2,2",
+                "fair": 9.0,
+                "fairness": -0.1,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Firewater",
+                "soft": 1.0,
+                "total": 10.0
+            },
+            {
+                "avg_stars": "2,1",
+                "fair": 7.0,
+                "fairness": 0.125,
+                "grade": "6c",
+                "hard": 1.0,
+                "name": "Drilling Fields",
+                "soft": 0.0,
+                "total": 8.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 8.0,
+                "fairness": 0.0,
+                "grade": "5a",
+                "hard": 0.0,
+                "name": "Wheat Thin",
+                "soft": 0.0,
+                "total": 8.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 8.0,
+                "fairness": 0.0,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Scream Cheese",
+                "soft": 0.0,
+                "total": 8.0
+            },
+            {
+                "avg_stars": "2,6",
+                "fair": 8.0,
+                "fairness": -0.3333333333333333,
+                "grade": "6b",
+                "hard": 0.0,
+                "name": "Fall Line",
+                "soft": 4.0,
+                "total": 12.0
+            },
+            {
+                "avg_stars": "2,4",
+                "fair": 6.0,
+                "fairness": 0.5333333333333333,
+                "grade": "6a",
+                "hard": 8.0,
+                "name": "Tribal Boundaries",
+                "soft": 1.0,
+                "total": 15.0
+            },
+            {
+                "avg_stars": "1,9",
+                "fair": 7.0,
+                "fairness": -0.3333333333333333,
+                "grade": "6b+",
+                "hard": 1.0,
+                "name": "City Girls",
+                "soft": 4.0,
+                "total": 12.0
+            },
+            {
+                "avg_stars": "2,1",
+                "fair": 3.0,
+                "fairness": 0.625,
+                "grade": "6c+",
+                "hard": 5.0,
+                "name": "Strategic Defense",
+                "soft": 0.0,
+                "total": 8.0
+            },
+            {
+                "avg_stars": "1,9",
+                "fair": 6.0,
+                "fairness": 0.25,
+                "grade": "6c+",
+                "hard": 2.0,
+                "name": "Loch Ness Monster",
+                "soft": 0.0,
+                "total": 8.0
+            },
+            {
+                "avg_stars": "2,8",
+                "fair": 6.0,
+                "fairness": -0.3333333333333333,
+                "grade": "5b",
+                "hard": 0.0,
+                "name": "Too Much Fun",
+                "soft": 3.0,
+                "total": 9.0
+            },
+            {
+                "avg_stars": "1,1",
+                "fair": 7.0,
+                "fairness": 0.125,
+                "grade": "5c",
+                "hard": 1.0,
+                "name": "Private Idaho",
+                "soft": 0.0,
+                "total": 8.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 6.0,
+                "fairness": 0.14285714285714285,
+                "grade": "6c",
+                "hard": 1.0,
+                "name": "Get Over It",
+                "soft": 0.0,
+                "total": 7.0
+            },
+            {
+                "avg_stars": "2,1",
+                "fair": 5.0,
+                "fairness": 0.2857142857142857,
+                "grade": "6c",
+                "hard": 2.0,
+                "name": "Redtail",
+                "soft": 0.0,
+                "total": 7.0
+            },
+            {
+                "avg_stars": "1,3",
+                "fair": 5.0,
+                "fairness": 0.0,
+                "grade": "5c",
+                "hard": 1.0,
+                "name": "Just Say No",
+                "soft": 1.0,
+                "total": 7.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 3.0,
+                "fairness": -0.5,
+                "grade": "7a+",
+                "hard": 0.0,
+                "name": "Electric Avenue",
+                "soft": 3.0,
+                "total": 6.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 5.0,
+                "fairness": 0.16666666666666666,
+                "grade": "7a+",
+                "hard": 1.0,
+                "name": "Bombs over tripoli",
+                "soft": 0.0,
+                "total": 6.0
+            },
+            {
+                "avg_stars": "1,6",
+                "fair": 5.0,
+                "fairness": -0.2857142857142857,
+                "grade": "6b+",
+                "hard": 0.0,
+                "name": "Morning Glory",
+                "soft": 2.0,
+                "total": 7.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 4.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Pigs On A Wing",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "1,8",
+                "fair": 5.0,
+                "fairness": 0.16666666666666666,
+                "grade": "6c",
+                "hard": 1.0,
+                "name": "Bumblie Takes a Tumblie",
+                "soft": 0.0,
+                "total": 6.0
+            },
+            {
+                "avg_stars": "1,2",
+                "fair": 6.0,
+                "fairness": -0.25,
+                "grade": "5b",
+                "hard": 0.0,
+                "name": "Rye Crisp",
+                "soft": 2.0,
+                "total": 8.0
+            },
+            {
+                "avg_stars": "2,4",
+                "fair": 5.0,
+                "fairness": 0.375,
+                "grade": "6c",
+                "hard": 3.0,
+                "name": "Sudden Pleasure",
+                "soft": 0.0,
+                "total": 8.0
+            },
+            {
+                "avg_stars": "2,3",
+                "fair": 4.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "The Drilling Fields",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "1,8",
+                "fair": 4.0,
+                "fairness": 0.2,
+                "grade": "7a+",
+                "hard": 1.0,
+                "name": "Young Frankenstein",
+                "soft": 0.0,
+                "total": 5.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 5.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Lego",
+                "soft": 0.0,
+                "total": 5.0
+            },
+            {
+                "avg_stars": "2,2",
+                "fair": 5.0,
+                "fairness": 0.0,
+                "grade": "7b",
+                "hard": 0.0,
+                "name": "Technicolor",
+                "soft": 0.0,
+                "total": 5.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 4.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "The Awakening",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "2,8",
+                "fair": 2.0,
+                "fairness": 0.5,
+                "grade": "6c",
+                "hard": 2.0,
+                "name": "Pogemahone",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "1,5",
+                "fair": 4.0,
+                "fairness": -0.2,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "The Pope got Pumped",
+                "soft": 1.0,
+                "total": 5.0
+            },
+            {
+                "avg_stars": "1,4",
+                "fair": 5.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Prey for Me",
+                "soft": 0.0,
+                "total": 5.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": 0.6,
+                "grade": "7a+",
+                "hard": 3.0,
+                "name": "The Mechanic",
+                "soft": 0.0,
+                "total": 5.0
+            },
+            {
+                "avg_stars": "2,8",
+                "fair": 4.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "New York is not the City",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "2,8",
+                "fair": 4.0,
+                "fairness": 0.0,
+                "grade": "7a+",
+                "hard": 1.0,
+                "name": "Magic journey",
+                "soft": 1.0,
+                "total": 6.0
+            },
+            {
+                "avg_stars": "1,8",
+                "fair": 4.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Chomping at the Bit",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "2,7",
+                "fair": 2.0,
+                "fairness": 0.3333333333333333,
+                "grade": "6c",
+                "hard": 1.0,
+                "name": "The Minnow",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "1,5",
+                "fair": 4.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Double cracks",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": 0.5,
+                "grade": "7a+",
+                "hard": 2.0,
+                "name": "Smoke Signals",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "1,2",
+                "fair": 3.0,
+                "fairness": -0.3333333333333333,
+                "grade": "7a+",
+                "hard": 1.0,
+                "name": "Eurobeast",
+                "soft": 2.0,
+                "total": 6.0
+            },
+            {
+                "avg_stars": "1,8",
+                "fair": 1.0,
+                "fairness": -0.75,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Contra Friction",
+                "soft": 3.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "2,3",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Land of the Lost",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Interceptor",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "5a",
+                "hard": 0.0,
+                "name": "Intruding Dike",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 4.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Beware of Nesting Egos",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "7a",
+                "hard": 2.0,
+                "name": "Fido",
+                "soft": 2.0,
+                "total": 5.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 4.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Acid Rain",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 3.0,
+                "fairness": 0.25,
+                "grade": "6c",
+                "hard": 1.0,
+                "name": "Scar Tissue",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "7b",
+                "hard": 1.0,
+                "name": "Calamari",
+                "soft": 1.0,
+                "total": 5.0
+            },
+            {
+                "avg_stars": "1,7",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "The pygmies got stoned",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "2,7",
+                "fair": 3.0,
+                "fairness": 0.3333333333333333,
+                "grade": "6b",
+                "hard": 2.0,
+                "name": "Quest for fire",
+                "soft": 1.0,
+                "total": 6.0
+            },
+            {
+                "avg_stars": "1,5",
+                "fair": 4.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "I can't believe it",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "2,3",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Scraps",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "2,7",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "7b",
+                "hard": 0.0,
+                "name": "Middle route",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "2,7",
+                "fair": 3.0,
+                "fairness": -0.625,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Sudden pleasure",
+                "soft": 5.0,
+                "total": 8.0
+            },
+            {
+                "avg_stars": "1,7",
+                "fair": 3.0,
+                "fairness": 0.25,
+                "grade": "6b+",
+                "hard": 1.0,
+                "name": "Brown Flake",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Bovine Guidance",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "1,7",
+                "fair": 3.0,
+                "fairness": -0.4,
+                "grade": "7a",
+                "hard": 0.0,
+                "name": "No Self Control",
+                "soft": 2.0,
+                "total": 5.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 3.0,
+                "fairness": 0.5714285714285714,
+                "grade": "5a",
+                "hard": 4.0,
+                "name": "Delay of Game",
+                "soft": 0.0,
+                "total": 7.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": 0.3333333333333333,
+                "grade": "7b",
+                "hard": 1.0,
+                "name": "Lesbian knife fight",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "5b",
+                "hard": 0.0,
+                "name": "Theater of Shadows",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "1,7",
+                "fair": 3.0,
+                "fairness": -0.25,
+                "grade": "5b",
+                "hard": 0.0,
+                "name": "Skyline",
+                "soft": 1.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "7b",
+                "hard": 0.0,
+                "name": "Inspiration or perspiration",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.5,
+                "grade": "6c",
+                "hard": 1.0,
+                "name": "Terror in Tiny Town",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 2.0,
+                "fairness": -0.3333333333333333,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Sex, Drugs & Rock & Roll",
+                "soft": 1.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "2,3",
+                "fair": 1.0,
+                "fairness": 0.6666666666666666,
+                "grade": "7b",
+                "hard": 2.0,
+                "name": "Spuds in the Gym",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": ",7",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "5b",
+                "hard": 0.0,
+                "name": "Batwings",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "1,7",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Deez Guys",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "2,3",
+                "fair": 1.0,
+                "fairness": 0.6666666666666666,
+                "grade": "6c",
+                "hard": 2.0,
+                "name": "Spot",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6b",
+                "hard": 0.0,
+                "name": "Live Wire",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6b+",
+                "hard": 0.0,
+                "name": "Heartbreaker",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 0.0,
+                "fairness": 1.0,
+                "grade": "7a",
+                "hard": 2.0,
+                "name": "Strategic Defenses",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6b",
+                "hard": 0.0,
+                "name": "Sabbatical",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 1.0,
+                "fairness": -0.5,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Bomber",
+                "soft": 1.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Fly Like an Eagle",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Wired Russets",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1,5",
+                "fair": 2.0,
+                "fairness": 0.5,
+                "grade": "7a+",
+                "hard": 2.0,
+                "name": "Smoke Signal",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": ",7",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "6b",
+                "hard": 0.0,
+                "name": "Circus Roof",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 2.0,
+                "fairness": -0.3333333333333333,
+                "grade": "7a+",
+                "hard": 0.0,
+                "name": "Crystal Cow",
+                "soft": 1.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Conceptual Reality",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": -0.6666666666666666,
+                "grade": "6b+",
+                "hard": 0.0,
+                "name": "Quest For Fire",
+                "soft": 4.0,
+                "total": 6.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 0.0,
+                "fairness": -1.0,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Muffin Top",
+                "soft": 2.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 0.0,
+                "fairness": -1.0,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Love Handles",
+                "soft": 2.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 0.0,
+                "fairness": -1.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Built for Comfort",
+                "soft": 2.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.5,
+                "grade": "7a",
+                "hard": 1.0,
+                "name": "Moderna zeiten",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1,5",
+                "fair": 1.0,
+                "fairness": 0.5,
+                "grade": "6c",
+                "hard": 1.0,
+                "name": "Singapore",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1,5",
+                "fair": 1.0,
+                "fairness": 0.5,
+                "grade": "6b+",
+                "hard": 1.0,
+                "name": "Harvest",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Beware of Nesting Ego's",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "5a",
+                "hard": 0.0,
+                "name": "Swiss Cheese",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Routine Expedition",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1,5",
+                "fair": 1.0,
+                "fairness": -0.5,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Lost Pioneers",
+                "soft": 1.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.6,
+                "grade": "7a",
+                "hard": 3.0,
+                "name": "Provo",
+                "soft": 1.0,
+                "total": 5.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Funky Bolt",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Snakes and Ladders",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "White Line Fever",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 1.0,
+                "fairness": 0.5,
+                "grade": "5b",
+                "hard": 1.0,
+                "name": "Fred rasmussen",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Stage Fright",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "7b",
+                "hard": 0.0,
+                "name": "Tel Aviv",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "1,7",
+                "fair": 3.0,
+                "fairness": 0.0,
+                "grade": "7b+",
+                "hard": 0.0,
+                "name": "How I Spent My Summer Vacation",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.5,
+                "grade": "7c+",
+                "hard": 1.0,
+                "name": "The Heretic",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.75,
+                "grade": "6c",
+                "hard": 3.0,
+                "name": "Terror of Tiny Town",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "7a+",
+                "hard": 0.0,
+                "name": "Camp Cupcake",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Trespassing",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "7a+",
+                "hard": 0.0,
+                "name": "Raingutter",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "5b",
+                "hard": 0.0,
+                "name": "Sinsimilla",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": -0.5,
+                "grade": "7b+",
+                "hard": 0.0,
+                "name": "Power Tools",
+                "soft": 1.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 2.0,
+                "fairness": 0.5,
+                "grade": "5a",
+                "hard": 2.0,
+                "name": "Carol's Crack",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 1.0,
+                "fairness": 0.8333333333333334,
+                "grade": "7a",
+                "hard": 5.0,
+                "name": "Magic Journey",
+                "soft": 0.0,
+                "total": 6.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 2.0,
+                "fairness": -0.5,
+                "grade": "5b",
+                "hard": 0.0,
+                "name": "Carol's crack",
+                "soft": 2.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "City Slicker",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 2.0,
+                "fairness": -0.3333333333333333,
+                "grade": "5b",
+                "hard": 0.0,
+                "name": "Raindance",
+                "soft": 1.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6a+",
+                "hard": 0.0,
+                "name": "This Spud's for You",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Crotchbound",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "5b",
+                "hard": 0.0,
+                "name": "Adolescent Homosapien",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Psycho Driller",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 1.0,
+                "fairness": 0.5,
+                "grade": "6b",
+                "hard": 1.0,
+                "name": "Dynamo Hum",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "7b+",
+                "hard": 0.0,
+                "name": "Fishbone",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 1.0,
+                "fairness": 0.5,
+                "grade": "6c",
+                "hard": 1.0,
+                "name": "Checkered Demon",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Flight of the Bumblie",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1,5",
+                "fair": 1.0,
+                "fairness": -0.5,
+                "grade": "7a+",
+                "hard": 0.0,
+                "name": "Skinner's Roof",
+                "soft": 1.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1,5",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "7a+",
+                "hard": 0.0,
+                "name": "Meningitis",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1,5",
+                "fair": 1.0,
+                "fairness": 0.5,
+                "grade": "5a",
+                "hard": 1.0,
+                "name": "Columbian Crack",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 1.0,
+                "fairness": -0.5,
+                "grade": "7b+",
+                "hard": 0.0,
+                "name": "Sea Biscuit",
+                "soft": 1.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2,5",
+                "fair": 1.0,
+                "fairness": 0.6666666666666666,
+                "grade": "6a",
+                "hard": 2.0,
+                "name": "Tow Away Zone",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 2.0,
+                "fairness": 0.3333333333333333,
+                "grade": "7a+",
+                "hard": 1.0,
+                "name": "Euro Beast",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Fluid Dynamics",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Hired Guns",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 1.0,
+                "fairness": 0.5,
+                "grade": "7a+",
+                "hard": 1.0,
+                "name": "Rain Gutter",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Mouse Trap",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 1.0,
+                "fairness": 0.5,
+                "grade": "6c",
+                "hard": 1.0,
+                "name": "Riding On An Incline",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "7c",
+                "hard": 0.0,
+                "name": "The Whip",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Queen On The Pot",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "1",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6a+",
+                "hard": 0.0,
+                "name": "There's Friction Afoot",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "2",
+                "fair": 2.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Aggro Betty",
+                "soft": 0.0,
+                "total": 2.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Safecracker",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Ball And Chain",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.6666666666666666,
+                "grade": "6a",
+                "hard": 2.0,
+                "name": "Tribal Boundries",
+                "soft": 0.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "5a",
+                "hard": 0.0,
+                "name": "Lost Spire",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Twin Cracks",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "She is the Bosch",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Bumblie Takes a Tumble",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Tide Country",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Beauty and the Beast",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6c",
+                "hard": 0.0,
+                "name": "Iterceptor",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6b+",
+                "hard": 0.0,
+                "name": "Terrebonne jack's",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "7a+",
+                "hard": 0.0,
+                "name": "Sexual dysfunction",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "7a",
+                "hard": 0.0,
+                "name": "Roughleg",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Batwings Direct",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "7a",
+                "hard": 0.0,
+                "name": "Testosterone Test",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 3.0,
+                "fairness": 0.25,
+                "grade": "7a",
+                "hard": 1.0,
+                "name": "Terror Of Tiny Town",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "5a",
+                "hard": 0.0,
+                "name": "Theatre of Shadows",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Wild country",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "4b",
+                "hard": 0.0,
+                "name": "Cowgirl Route",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "4b",
+                "hard": 0.0,
+                "name": "Easy Way Up",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Eagle Crack",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6b",
+                "hard": 0.0,
+                "name": "Colossis",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 0.0,
+                "fairness": 1.0,
+                "grade": "6b+",
+                "hard": 4.0,
+                "name": "Terror of tiny town",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "5b",
+                "hard": 0.0,
+                "name": "Catwalk",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 0.0,
+                "fairness": 1.0,
+                "grade": "6c",
+                "hard": 4.0,
+                "name": "Beware of nesting egos",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 0.0,
+                "fairness": 1.0,
+                "grade": "6a",
+                "hard": 1.0,
+                "name": "White Lightning",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 2.0,
+                "fairness": -0.3333333333333333,
+                "grade": "6a+",
+                "hard": 0.0,
+                "name": "Tow away zone",
+                "soft": 1.0,
+                "total": 3.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 0.0,
+                "fairness": 0.8333333333333334,
+                "grade": "7a",
+                "hard": 5.0,
+                "name": "Electric avenue",
+                "soft": 1.0,
+                "total": 6.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 0.0,
+                "fairness": 1.0,
+                "grade": "6b+",
+                "hard": 1.0,
+                "name": "Do Rangers Dream of Electric Sheep",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Animal cracker",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 0.0,
+                "fairness": 1.0,
+                "grade": "6b+",
+                "hard": 4.0,
+                "name": "Scar tissue",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 0.0,
+                "fairness": 1.0,
+                "grade": "6b",
+                "hard": 4.0,
+                "name": "Brown flake",
+                "soft": 0.0,
+                "total": 4.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Old Bolt Route",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Pocket rocket",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 0.0,
+                "fairness": 1.0,
+                "grade": "7a",
+                "hard": 1.0,
+                "name": "Crack of Doom!",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 4.0,
+                "fairness": -0.2,
+                "grade": "7a+",
+                "hard": 0.0,
+                "name": "Provo",
+                "soft": 1.0,
+                "total": 5.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6c+",
+                "hard": 0.0,
+                "name": "Dance To The Music",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6a",
+                "hard": 0.0,
+                "name": "Reservations",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "5a",
+                "hard": 0.0,
+                "name": "Classic Route",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "5c",
+                "hard": 0.0,
+                "name": "Aspen leaf",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "6b+",
+                "hard": 0.0,
+                "name": "Silent Partner",
+                "soft": 0.0,
+                "total": 1.0
+            },
+            {
+                "avg_stars": "3",
+                "fair": 1.0,
+                "fairness": 0.0,
+                "grade": "5b",
+                "hard": 0.0,
+                "name": "Corridor crack",
+                "soft": 0.0,
+                "total": 1.0
+            }
+        ],
+        "total_ascents": 764
     },
     {
         "coordinates": [
@@ -52617,7 +54452,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 1310
+        "total_ascents": 1333
     },
     {
         "coordinates": [
@@ -54332,7 +56167,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 1131
+        "total_ascents": 1154
     },
     {
         "coordinates": [
@@ -56027,7 +57862,7 @@
                 "total": 2.0
             }
         ],
-        "total_ascents": 1330
+        "total_ascents": 1352
     },
     {
         "coordinates": [
@@ -57762,7 +59597,7 @@
                 "total": 2.0
             }
         ],
-        "total_ascents": 1003
+        "total_ascents": 1013
     },
     {
         "coordinates": [
@@ -59597,7 +61432,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 1144
+        "total_ascents": 1162
     },
     {
         "coordinates": [
@@ -61412,7 +63247,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 944
+        "total_ascents": 964
     },
     {
         "coordinates": [
@@ -62337,7 +64172,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 1154
+        "total_ascents": 1169
     },
     {
         "coordinates": [
@@ -64062,7 +65897,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 1244
+        "total_ascents": 1252
     },
     {
         "coordinates": [
@@ -65967,7 +67802,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 838
+        "total_ascents": 843
     },
     {
         "coordinates": [
@@ -67812,7 +69647,7 @@
                 "total": 3.0
             }
         ],
-        "total_ascents": 838
+        "total_ascents": 866
     },
     {
         "coordinates": [
@@ -69617,7 +71452,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 759
+        "total_ascents": 765
     },
     {
         "coordinates": [
@@ -71342,7 +73177,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 910
+        "total_ascents": 923
     },
     {
         "coordinates": [
@@ -72577,7 +74412,7 @@
                 "total": 3.0
             }
         ],
-        "total_ascents": 1115
+        "total_ascents": 1130
     },
     {
         "coordinates": [
@@ -73082,7 +74917,7 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 819
+        "total_ascents": 827
     },
     {
         "coordinates": [
@@ -74947,6 +76782,6 @@
                 "total": 1.0
             }
         ],
-        "total_ascents": 993
+        "total_ascents": 1008
     }
 ]
