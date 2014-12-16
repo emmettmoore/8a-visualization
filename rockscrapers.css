@@ -1,21 +1,36 @@
+section {
+	height: 39vh;
+	width: 90%;
+	margin: 2vh 5% 10vh 5%;
+	border-top: 1px solid lightgray;
+	display: block;
+}
+#map-section {
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	height: 49vh;
+}
+
 #crag-map {
 	position: relative;
-	width: 800px;
-	height: 400px;
+	width: 50%;
+	height: 100%;
 	margin: 0 auto;
 }
 
 #all-crags-graph, #routes-graph, #route-info {
-	height: 220px;
-	border-top: 1px solid lightgray;
+	/*height: 220px;*/
+	height: 80%;
+	/*border-top: 1px solid lightgray;*/
 	padding-top: 10px;
-	width: 90%;
-	margin-left: 5%;
+	/*width: 90%;*/
+	/*margin-left: 5%;*/
 }
 
 
 #routes-graph {
-	margin-bottom: 25px;
+	height: 50%
+	margin-bottom: 10%;
 }
 #routes-graph .bar-label {
 	display: none;
@@ -32,7 +47,7 @@
 }
 
 #route-info {
-	height: 100px;
+	height: 30%;
 	border-top: 1px dashed lightgray;
 }
 #route-name {
@@ -52,5 +67,6 @@ h1 {
 }
 
 .sandbag-graph .clicked {
-	border-bottom: 1.5px solid rgb(40,40,40);
+	padding-bottom: 2px;
+	border-bottom: 2px solid rgb(40,40,40);
 }

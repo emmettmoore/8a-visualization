@@ -19,13 +19,34 @@
 
 <h1>Rock Scrapers</h1>
 
-<div id="crag-map"></div>
-<div id="all-crags-graph"></div>
-<div id="routes-graph"></div>
-<div id="route-info">
-	<div id="route-name"></div>
-	<p id="route-grade"></p>
-</div>
+<section>
+	<div id="explanation">
+		<p>Complex. Requires determining a valid metric of soft vs. sandbagged, classics vs. non-classics.
+Notes that the data in this database only includes ascents. This means that we have no data on the opinions of those that may have gotten pummeled on a route.
+This means that there is probably no easy way to detect that sandbags are not "classic".
+8a combines unreliable user data with poor organization.
+Users log routes, and 8a adds a new climb to the database if there is not "collision".
+The site doesn't give a useful link (it is "8a.nu") for each page until reached individual climbs, or user pages.
+This is a problem for Scrapy.. see below
+If a climb is logged with two different grades in the database, we will see it twice in the "area" list. Both links will go to the same place, however.
+This allows for users to accidentally spell climbs wrong and have them added to the DB wrong.
+Anonymous accounts must be filtered out (don't go to an actual logbook; just says "this user is anonymous").</p>
+	</div>
+</section>
+<section id="map-section">
+	<div id="crag-map"></div>
+</section>
+<section>
+	<div id="all-crags-graph"></div>
+</section>
+<section>
+	<div id="routes-graph"></div>
+	<div id="route-info">
+		<div id="route-name"></div>
+		<p id="route-grade"></p>
+		<p id="num-ascents"></p>
+	</div>
+</section>
 
 </body>
 <script src="./crag-map.js"></script>
