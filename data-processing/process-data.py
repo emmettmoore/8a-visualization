@@ -106,22 +106,23 @@ def cragsFromJson(dataPath):
             else:
                 crag['coordinates'] = None
             # merge routes with similar names
-            route_keys = []
+            route_keys = {}
             orig_name = {}
             to_del = []
             for i, route in enumerate(crag['route']):
                 key_name = route['name'].replace(" ", "").replace("\'", "").replace("\"", "").lower()
-                if key_name in route_keys:
+                if key_name in route_keys.keys():
                     try:
                         print ("                                            Route {} already in list as {}".format(route['name'].encode('utf-8'), orig_name[key_name]))
                     except UnicodeEncodeError:
                         pass
-                    if type(crag['route'][i]['ascents']) is list and type(route['ascents']) is list:
-                        crag['route'][i]['ascents'].append(route['ascents'])
+                    if type(crag['route'][route_keys[key_name]]['ascents']) is list and type(route['ascents']) is list:
+                        crag['route'][route_keys[key_name]]['ascents'].append(route['ascents'])
+                        print
                         to_del = [i] + to_del
                 else:
                     orig_name[key_name] = route['name']
-                    route_keys.append(key_name)
+                    route_keys[key_name] = i
 
             for route in crag['route']:
                 # get softness of route
