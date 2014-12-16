@@ -1,7 +1,7 @@
 var NUM_RED_ASCENTS = 24692;
 
 highlightedCrag = new ReactiveVar();
-// clickedCrag = new ReactiveVar();
+clickedCrag = new ReactiveVar();  // CLICK
 highlightedRoute = new ReactiveVar();
 
 var softColor = 'blue';
@@ -32,18 +32,21 @@ function graph_all_crags(data) {
       })
       .hover(setRef(highlightedCrag), setRef(highlightedCrag, null))
       .routeHover(setRef(highlightedRoute), setRef(highlightedRoute, null))
-      // .click(function(d, i) {
-      //   clickedCrag.set({d: d, i: i});
-      //   d3.select(this.parentNode).select(".clicked")
-      //     .classed("clicked", false);
-      //   d3.select(this)
-      //     .classed("clicked", true);
-      // })
+      /// CLICK
+      .click(function(d, i) {
+        clickedCrag.set({d: d, i: i});
+        d3.select(this.parentNode).select(".clicked")
+          .classed("clicked", false);
+        d3.select(this)
+          .classed("clicked", true);
+      })
+      /// /CLICK
       ;
     routesGrapher = sandBagGraph()
       .fairnessArrAccessor(function(d) {
         return d.fairness_arr;
       })
+      .label(false)
       ;
 
     cragsGraph = d3.select("#all-crags-graph")
@@ -54,6 +57,9 @@ function graph_all_crags(data) {
       .datum([])
       .call(routesGrapher)
       ;
+
+    routeName = d3.select("#route-name");
+    routeGrade = d3.select("#route-grade");
 
     Tracker.autorun(function highlightCragsGraph() {
       var ref = highlightedCrag.get();
@@ -67,26 +73,32 @@ function graph_all_crags(data) {
     Tracker.autorun(function highlightRoutesGraph() {
       var ref = highlightedRoute.get();
       if (!ref) {
-        routesGraph.call(routesGrapher.highlighter(null))
+        routesGraph.call(routesGrapher.highlighter(null));
+        routeName.text("");
+        routeGrade.text("");
       } else {
         routesGraph.call(routesGrapher.highlighter(ref.d, ref.i));
+        routeName.text(ref.d.name);
+        routeGrade.text(ref.d.grade);
       }
     });
 
     Tracker.autorun(function updateRoutesData() {
       var highlightRef = highlightedCrag.get();
-      // var clickRef = clickedCrag.get();
+      var clickRef = clickedCrag.get();  // CLICK
       var highlightCrag = (highlightRef || {}).d;
-      // var clickCrag = (clickRef || {}).d;
+      var clickCrag = (clickRef || {}).d;  // CLICK
 
       var crag = highlightCrag;
-      // var crag = highlightCrag && typeof highlightCrag != "string"
-          // ? highlightCrag : clickCrag
+      // CLICK
+      var crag = highlightCrag && typeof highlightCrag != "string"
+          ? highlightCrag : clickCrag
+      // /CLICK
 
       var data = [];
       if (Array.isArray(crag)) {
-        alert('ITS AN ARRAY!');
-        debugger;
+        // alert('ITS AN ARRAY!');  // CLICK
+        // debugger;  // CLICK
       }
       if (crag && typeof crag != "string") {
         crag.route.forEach(function(route) {

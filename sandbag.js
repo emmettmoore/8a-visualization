@@ -30,6 +30,7 @@ function sandBagGraph() {
 	var fairnessArrAccessor = function(d, i) {
 		return d.fairness;
 	};
+	var doLabel = true;
 
 	var padding = 0.2;
 	
@@ -70,15 +71,17 @@ function sandBagGraph() {
 				.classed("bar-label", true)
 				;
 
-			var bls = graphs.selectAll(".bar-label")
-				.text(function(d) {
-					return d.name;
-				});
+			if (doLabel) {
+				graphs.selectAll(".bar-label")
+					.text(function(d) {
+						return d.name;
+					});
+			}
 			
 			graphs
 				.style("width", barWidth+"%")
 				.style("margin", "0 "+barMargin+"%")
-				.style('height', function(d) { return height(fairnessArrAccessor(d).length) + "%" });
+				// .style('height', function(d) { return height(fairnessArrAccessor(d).length) + "%" });
 
 			graphs.selectAll(".sandbag").data(function(d) { 
 				return [fairnessArrAccessor(d)]; 
@@ -112,6 +115,11 @@ function sandBagGraph() {
 	my.fairnessArrAccessor = function(fun) {
 		if (!arguments.length) return fairnessArrAccessor;
 		fairnessArrAccessor = fun;
+		return my;
+	}
+	my.label = function(val) {
+		if (!arguments.length) return doLabel;
+		doLabel = val;
 		return my;
 	}
 
