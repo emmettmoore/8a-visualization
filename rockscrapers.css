@@ -15,14 +15,14 @@ section {
 	display: block;
 }
 #intro {
-	line-height: 1.5em;
+	line-height: 1.4em;
 	font-weight: lighter;
 }
 	#explanation {
 		width: 60%;
 		height: 95%;
 		float: left;
-		overflow-y: scroll;
+		/*overflow-y: scroll;*/
 	}
 	#demo {
 		border-left: 1px solid lightgray;
