@@ -22,7 +22,7 @@ section {
 		width: 60%;
 		height: 95%;
 		float: left;
-		overflow-y: scroll;
+		/*overflow-y: scroll;*/
 	}
 	#demo {
 		border-left: 1px solid lightgray;
@@ -47,7 +47,15 @@ section {
 		#demo .demo {
 			font-size: 11pt;
 		}
-
+#soft {
+    color: blue;
+}
+#hard {
+    color: red;
+}
+#fair {
+    color: black;
+}
 #map-section {
 	margin-top: 1vh;
 	margin-bottom: 1vh;
