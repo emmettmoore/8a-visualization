@@ -152,6 +152,11 @@ function load_crags(raw_crags) {
         var crag = raw_crags[i];
         crags.push({
               name: crag['name'],
+              fairness: crag['fairness'],
+              softest_route: crag['route'][0]['name'],
+              softest_route_grade: crag['route'][0]['grade'],
+              hardest_route: crag['route'][crag['route'].length - 1]['name'],
+              hardest_route_grade: crag['route'][crag['route'].length - 1]['grade'],
               radius: get_radius(crag['total_ascents']),
               fillKey: crag['name'],
               latitude: crag["coordinates"][0],

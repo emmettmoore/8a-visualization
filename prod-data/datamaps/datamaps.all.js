@@ -36,7 +36,8 @@
         popupOnHover: true,
         popupTemplate: function(geography, data) {
           highlightedCrag.set({d: data})
-          return '<div class="hoverinfo">Name is: <strong>' + data.name + '</strong></div>';
+          var return_string = '<div class="hoverinfo"> <strong>' + data.name + '</strong>:</br>';
+          return return_string;
         },
         fillOpacity: 0.75,
         animate: true,
@@ -12110,7 +12111,14 @@
           //if ( !data ) return '';
 
           highlightedCrag.set({d: data.name})
-          return '<div class="hoverinfo">Crag is: <strong>' + data.name + '</strong>';
+
+          var return_string = '<div class="hoverinfo"> <strong>' + data.name + '</strong>:</br>';
+          return_string += 'Average Route Fairness: '+ data.fairness.toFixed(3) + '</br>';
+          return_string += 'Softest Route: <em>' + data.softest_route + '</em>, '
+          return_string += data.softest_route_grade + '</br>';
+          return_string += 'Biggest Sandbag: <em>' + data.hardest_route + '</em>, ';
+          return_string += data.hardest_route_grade+ '</br>';
+          return return_string;
           // return options.popupTemplate(d, data);
         })
         .style('left', ( position[0]) + "px");
