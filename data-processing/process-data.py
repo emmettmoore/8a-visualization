@@ -131,7 +131,7 @@ def cragsFromJson(dataPath):
                 route.update( softness(route['ascents'], route['grade'], crag['name'] ))
                 total_ascents += len(route['ascents'])
                 crag_total_fairness += route['fairness']
-                # remove unneded fields to reduce size of output
+                # remove unneeded fields to reduce size of output
                 for field in ['ascents', 'index', 'thumbs_up', 'f_os', 'crag']:
                     del route[field]
 
@@ -147,6 +147,7 @@ def cragsFromJson(dataPath):
                         num_fair+= 1;
                     num_routes =  num_fair + num_soft + num_hard
             crag['route'] = [route for route in crag['route'] if route['total'] > 0]
+            crag['route'] = sorted(crag['route'], key=lambda k: k['fairness'])
             print("crag_total_fairness {}".format(crag_total_fairness))
             print("num_routes: {}".format(num_routes))
             print("num_soft: {}".format(num_soft))
