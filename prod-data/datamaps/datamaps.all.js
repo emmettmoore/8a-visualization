@@ -35,7 +35,7 @@
         borderColor: '#000000',
         popupOnHover: true,
         popupTemplate: function(geography, data) {
-          highlighted.set({d: data})
+          highlightedCrag.set({d: data})
           return '<div class="hoverinfo">Name is: <strong>' + data.name + '</strong></div>';
         },
         fillOpacity: 0.75,
@@ -12099,7 +12099,7 @@
     var self = this;
     element.on('mousemove', null);
     element.on('mouseleave', function() {
-      highlighted.set(null);
+      highlightedCrag.set(null);
     });
     element.on('mousemove', function() {
       var position = d3.mouse(this);
@@ -12109,7 +12109,7 @@
           var data = JSON.parse(element.attr('data-info'));
           //if ( !data ) return '';
 
-          highlighted.set({d: data.name})
+          highlightedCrag.set({d: data.name})
           return '<div class="hoverinfo">Crag is: <strong>' + data.name + '</strong>';
           // return options.popupTemplate(d, data);
         })

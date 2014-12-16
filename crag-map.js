@@ -1,6 +1,7 @@
 var NUM_RED_ASCENTS = 24692;
 
-highlighted = new ReactiveVar();
+highlightedCrag = new ReactiveVar();
+clickedCrag = new ReactiveVar();
 
 var softColor = 'blue';
 var hardColor = 'red';
@@ -21,26 +22,80 @@ d3.json(url, function(err, response) {
 });
 
 function graph_all_crags(data) {
-    grapher = sandBagGraph()
+    cragsGrapher = sandBagGraph()
       .fairnessAccessor(function(d, i) {
         return d.fairness;
       })
-      .hover(setRef(highlighted), setRef(highlighted, null))
+      .fairnessArrAccessor(function(d) {
+        return d.route;
+      })
+      .hover(setRef(highlightedCrag), setRef(highlightedCrag, null))
+      .click(function(d, i) {
+        clickedCrag.set({d: d, i: i});
+        d3.select(this.parentNode).select(".clicked")
+          .classed("clicked", false);
+        d3.select(this)
+          .classed("clicked", true);
+      })
+      ;
+    routesGrapher = sandBagGraph()
+      .fairnessArrAccessor(function(d) {
+        return d.fairness_arr;
+      })
       ;
 
-    graph = d3.select("#all-crags-graph")
+    cragsGraph = d3.select("#all-crags-graph")
       .datum(data)
-      .call(grapher)
+      .call(cragsGrapher)
+      ;
+    routesGraph = d3.select("#routes-graph")
+      .datum([])
+      .call(routesGrapher)
       ;
 
-    Tracker.autorun(function highlightGraph() {
-      var ref = highlighted.get();
+    Tracker.autorun(function highlightCragsGraph() {
+      var ref = highlightedCrag.get();
       if (!ref) {
-        graph.call(grapher.highlighter(null))
+        cragsGraph.call(cragsGrapher.highlighter(null))
       } else {
-        graph.call(grapher.highlighter(ref.d, ref.i));
+        cragsGraph.call(cragsGrapher.highlighter(ref.d, ref.i));
       }
     });
+
+    Tracker.autorun(function updateRoutesData() {
+      var highlightRef = highlightedCrag.get();
+      var clickRef = clickedCrag.get();
+      var highlightCrag = (highlightRef || {}).d;
+      var clickCrag = (clickRef || {}).d;
+
+      var crag = highlightCrag && typeof highlightCrag != "string"
+          ? highlightCrag : clickCrag
+
+      var data = [];
+      if (Array.isArray(crag)) {
+        debugger;
+      }
+      if (crag && typeof crag != "string") {
+        crag.route.forEach(function(route) {
+          if (!route.fairness_arr) {
+            var fairness_arr = [];
+            for (var i = 0; i < route.soft; i++)
+                fairness_arr.push(-1);
+            for (var i = 0; i < route.fair; i++)
+                fairness_arr.push(0);
+            for (var i = 0; i < route.hard; i++)
+                fairness_arr.push(1);
+            route.fairness_arr = fairness_arr;
+          }
+        });
+        data = crag.route;
+      }
+
+      routesGraph
+        .datum(data)
+        .call(routesGrapher)
+        ;
+    })
 }
 
 function populate_fills(raw_crags) {
@@ -74,7 +129,7 @@ function load_crags(raw_crags) {
             borderColor: '#000000',
             popupOnHover: true,
             popupTemplate: function(geography, data) {
-                highlighted.set({d: data})
+                highlightedCrag.set({d: data})
                 return '<div class="hoverinfo"><strong>' + data.name + '</strong></br>' + data.fillKey + '</div>';
             },
         }
