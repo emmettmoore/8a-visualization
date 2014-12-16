@@ -12,7 +12,7 @@
 	font: 10px sans-serif;
 }
 .bar-highlighted {
-	font-weight: bold;
+
 }
 .bar-label {
 	position: absolute;
@@ -21,9 +21,10 @@
 	width: 150px;
 	transform-origin: left bottom;
 }
-/*.bar:hover .bar-label {
-	font-weight: bold;
-}*/
+.bar-highlighted .bar-label {
+	font-weight: bolder;
+	font-size: 12px;
+}
 .sandbag {
 	height: 100%;
 	/*width: 30px;*/
