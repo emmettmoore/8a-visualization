@@ -34,6 +34,9 @@
 -   Get all the ascents for every climb, 
 -   Get all the routes for the area. But don't get a climb with less than 20 ascents. 
 
+### Description
+-   Climbing grades just don't make sense. Grades, which are intended to judge the difficulty of a route, are notoriously subjective. For years, climbers have bickered over whether certain routes are soft (easy for the grade), fair, or sandbagged (hard). Eventually friendly turf wars developed with some climbers proclaiming their home crag's grades as fair while dissing other areas by calling their grades "soft". In one [article][11] chronicling the annual rivalry basketball game between two famous areas, the Red River Gorge and the New River Gorge, one local dissed the Red by calling it "a technique-optional outdoor gym with soft grades" Can we definitively determine whether the Red really is soft? Probably not, but we can visualize the consensus of routes that thousands of [8a.nu][3] have come to. 8a.nu allows climbers to log their ascents, write a comment, and declare a route "Soft" or "Hard" for the grade. Below are our findings.
+
 ### Tools
 - [Free D3 Code!][9]
 - [D3 Notes][10]
@@ -52,4 +55,4 @@
 [8]: http://stackoverflow.com/questions/17447784/scrape-links-from-a-table-with-scrapy?rq=1 "Scrape Links from Table with Scrapy"
 [9]: http://bl.ocksplorer.org "blocksplorer.org"
 [10]: https://github.com/mbostock/ "D3 Notes"
-
+[11]: http://www.climbing.com/climber/red-vs-new/ 'Red vs. New'
