@@ -1,4 +1,13 @@
+section h2 {
+	position: absolute;
+	font-weight: lighter;
+	transform: rotate(-90deg);
+	transform-origin: left top;
+	left: -4%;
+	top: 50%;
+}
 section {
+	position: relative;
 	height: 39vh;
 	width: 90%;
 	margin: 2vh 5% 10vh 5%;
@@ -10,11 +19,27 @@ section {
 	margin-bottom: 1vh;
 	height: 49vh;
 }
+#intro {
+	line-height: 1.5em;
+	font-weight: lighter;
+}
+	#explanation {
+		width: 60%;
+		height: 95%;
+		float: left;
+		overflow-y: scroll;
+	}
+	#axes {
+		width: 39%;
+		height: 95%;
+		border: 1px solid lightgray;
+		float: right;
+	}
 
 #crag-map {
 	position: relative;
 	width: 50%;
-	height: 100%;
+	height: 110%;
 	margin: 0 auto;
 }
 
