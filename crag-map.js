@@ -30,7 +30,7 @@ function graph_all_crags(data) {
       .fairnessArrAccessor(function(d) {
         return d.route;
       })
-      .hover(setRef(highlightedCrag), setRef(highlightedCrag, null))
+      .hover(setRef(highlightedCrag)/*, setRef(highlightedCrag, null)*/)
       .routeHover(setRef(highlightedRoute), setRef(highlightedRoute, null))
       /// CLICK
       .click(function(d, i) {
