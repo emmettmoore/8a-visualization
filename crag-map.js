@@ -15,7 +15,6 @@ var url = "/prod-data/8a-gl-filtered.json";
 
 d3.json(url, function(err, response) {
     var raw_crags = response;
-    console.log(raw_crags);
     populate_fills(raw_crags);
     load_crags(raw_crags);
     graph_all_crags(raw_crags);
@@ -70,11 +69,12 @@ function load_crags(raw_crags) {
             highlightOnHover: false,
             borderColor: '#FFB680'
         }, 
-        bubble_config: {
+        bubblesConfig: {
             borderWidth: 2,
             borderColor: '#000000',
             popupOnHover: true,
             popupTemplate: function(geography, data) {
+                highlighted.set({d: data})
                 return '<div class="hoverinfo"><strong>' + data.name + '</strong></br>' + data.fillKey + '</div>';
             },
         }
@@ -90,29 +90,6 @@ function load_crags(raw_crags) {
               longitude: crag["coordinates"][1],
               });
     }
-/*
-    var crags = [{
-              name: 'Red River Gorge',
-              radius: 20,
-              fillKey: 'RRG',
-              latitude: 37.80,
-              longitude: -83.70,
-    },{
-              name: 'NRG',
-              radius: 14,
-              fillKey: 'NRG',
-              latitude: 38.05,
-              longitude: -81.11
-
-    },{
-              name: 'RUM',
-              radius: 17,
-              fillKey: 'RUM',
-              latitude: 43.80,
-              longitude: -71.81
-    
-    }]; 
-    */
     //draw bubbles for crags
      crag_map.bubbles(crags, {
         popupTemplate: function (geo, data) { 

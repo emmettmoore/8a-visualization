@@ -102,7 +102,12 @@ function sandBagGraph() {
 			if (d != null) {
 				var bars = selection.selectAll(".bar");
 				if (!i) {
-					var bar = bars.select(hasdata(d));
+					if (typeof d === "string")
+						var bar = bars.select(function(this_d) {
+							return d == this_d.name ? this : null;
+						});
+					else
+						var bar = bars.select(hasdata(d));
 				} else {
 					var bar = d3.select(bars[0][i]);
 				}
