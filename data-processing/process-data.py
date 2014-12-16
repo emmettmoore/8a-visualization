@@ -2,6 +2,7 @@ from __future__ import print_function
 import sys
 import cPickle
 import os.path
+import random
 
 import ijson
 import json
@@ -32,6 +33,9 @@ def softness(ascents, grade, crag):
     hard     = 0.
     total    = 0.
     fairness = 0.
+    soft_comments = []
+    hard_comments = []
+    fair_comments = []
     for ascent in ascents:
         if not type(ascent) is dict:
             # print_err( "ERROR: ascent is a {}: {} in crag {}".format(type(ascent), ascent, crag ))
@@ -48,10 +52,16 @@ def softness(ascents, grade, crag):
         if asc_grade == grade:
             if asc_comment.startswith("Soft"):
                 soft += 1
+                if len(asc_comment) > 5:
+                    soft_comments.append(asc_comment[3:])
             elif asc_comment.startswith("Hard"):
                 hard += 1
+                if len(asc_comment) > 5:
+                    hard_comments.append(asc_comment[3:])
             else:
                 fair += 1
+                if len(asc_comment) > 1:
+                    fair_comments.append(asc_comment)
         elif asc_grade < grade:
             if not asc_comment.startswith("Hard"):  
                 soft += 1
@@ -72,11 +82,20 @@ def softness(ascents, grade, crag):
         else:
             fairness = hard / total
 
+    if soft_comments == []:
+        soft_comments.append("")
+    if hard_comments == []:
+        hard_comments.append("")
+    if fair_comments == []:
+        fair_comments.append("")
 
     return {
         "soft": soft,
+        "soft_comment": random.choice(soft_comments),
         "fair": fair,
+        "fair_comment": random.choice(fair_comments),
         "hard": hard,
+        "hard_comment": random.choice(hard_comments),
         "total": total,
         "fairness": fairness
     }
