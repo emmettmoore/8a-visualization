@@ -35,7 +35,7 @@ function graph_all_crags(data) {
       /// CLICK
       .click(function(d, i) {
         clickedCrag.set({d: d, i: i});
-        d3.select(this.parentNode).select(".clicked")
+        d3.select(this.parentElement).select(".clicked")
           .classed("clicked", false);
         d3.select(this)
           .classed("clicked", true);
@@ -47,6 +47,7 @@ function graph_all_crags(data) {
         return d.fairness_arr;
       })
       .label(false)
+      .hover(setRef(highlightedRoute))
       ;
 
     cragsGraph = d3.select("#all-crags-graph")
@@ -60,6 +61,11 @@ function graph_all_crags(data) {
 
     routeName = d3.select("#route-name");
     routeGrade = d3.select("#route-grade");
+    routeStats = d3.select("#route-stats");
+    routeFairness = d3.select("#route-fairness");
+    hardComment = d3.select("#hard-comment").select("p");
+    fairComment = d3.select("#fair-comment").select("p");
+    softComment = d3.select("#soft-comment").select("p");
 
     Tracker.autorun(function highlightCragsGraph() {
       var ref = highlightedCrag.get();
@@ -76,13 +82,25 @@ function graph_all_crags(data) {
         routesGraph.call(routesGrapher.highlighter(null));
         routeName.text("");
         routeGrade.text("");
+        routeStats.text("");
+        routeFairness.text("");
       } else {
         routesGraph.call(routesGrapher.highlighter(ref.d, ref.i));
-        routeName.text(ref.d.name);
-        routeGrade.text(ref.d.grade);
+
+        var route = ref.d;
+        routeName.text(route.name);
+        routeGrade.text(route.grade);
+        routeStats.text(route.soft+" soft, "+route.fair+" fair or unnoted, "+route.hard+" hard (out of "+route.total+" ascents)");
+        routeFairness.text("Fairness score: "+route.fairness.toFixed(2));
+        hardComment.text( route.hard_comment.length ? '"'+route.hard_comment+'"' : "");
+        fairComment.text( route.fair_comment.length ? '"'+route.fair_comment+'"' : "");
+        softComment.text( route.soft_comment.length ? '"'+route.soft_comment+'"' : "");
       }
     });
 
+    routesGraph.on("mouseenter", function() {
+      highlightedCrag.set( clickedCrag.get() )
+    });
     Tracker.autorun(function updateRoutesData() {
       var highlightRef = highlightedCrag.get();
       var clickRef = clickedCrag.get();  // CLICK
@@ -151,7 +169,7 @@ function graph_all_crags(data) {
         var route = ref.d;
         demoRoute.text("Climb: "+route.name + " ("+route.grade+")");
         demoStats.text(route.soft+" soft, "+route.fair+" fair or unnoted, "+route.hard+" hard (out of "+route.total+" ascents)");
-        demoFairness.text("Fairness: "+route.fairness);
+        demoFairness.text("Fairness score: "+route.fairness.toFixed(2));
       }
     })
 }
