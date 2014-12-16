@@ -29,12 +29,26 @@ section {
 		float: left;
 		overflow-y: scroll;
 	}
-	#axes {
+	#demo {
+		border-left: 1px solid lightgray;
 		width: 39%;
 		height: 95%;
-		border: 1px solid lightgray;
+		/*border: 1px solid lightgray;*/
 		float: right;
 	}
+		#demo-info {
+			/*position: relative;*/
+			width: 80%;
+			height: 100%;
+			float: left;
+			line-height: 1em;
+			text-align: center;
+		}
+		#demo-graph {
+			width: 10%;
+			height: 100%;
+			margin-left: 85%;
+		}
 
 #crag-map {
 	position: relative;
