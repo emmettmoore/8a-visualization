@@ -1,7 +1,7 @@
 var NUM_RED_ASCENTS = 24692;
 
 highlightedCrag = new ReactiveVar();
-clickedCrag = new ReactiveVar();
+// clickedCrag = new ReactiveVar();
 
 var softColor = 'blue';
 var hardColor = 'red';
@@ -30,13 +30,13 @@ function graph_all_crags(data) {
         return d.route;
       })
       .hover(setRef(highlightedCrag), setRef(highlightedCrag, null))
-      .click(function(d, i) {
-        clickedCrag.set({d: d, i: i});
-        d3.select(this.parentNode).select(".clicked")
-          .classed("clicked", false);
-        d3.select(this)
-          .classed("clicked", true);
-      })
+      // .click(function(d, i) {
+      //   clickedCrag.set({d: d, i: i});
+      //   d3.select(this.parentNode).select(".clicked")
+      //     .classed("clicked", false);
+      //   d3.select(this)
+      //     .classed("clicked", true);
+      // })
       ;
     routesGrapher = sandBagGraph()
       .fairnessArrAccessor(function(d) {
@@ -64,15 +64,17 @@ function graph_all_crags(data) {
 
     Tracker.autorun(function updateRoutesData() {
       var highlightRef = highlightedCrag.get();
-      var clickRef = clickedCrag.get();
+      // var clickRef = clickedCrag.get();
       var highlightCrag = (highlightRef || {}).d;
-      var clickCrag = (clickRef || {}).d;
+      // var clickCrag = (clickRef || {}).d;
 
-      var crag = highlightCrag && typeof highlightCrag != "string"
-          ? highlightCrag : clickCrag
+      var crag = highlightCrag;
+      // var crag = highlightCrag && typeof highlightCrag != "string"
+          // ? highlightCrag : clickCrag
 
       var data = [];
       if (Array.isArray(crag)) {
+        alert('ITS AN ARRAY!');
         debugger;
       }
       if (crag && typeof crag != "string") {
