@@ -1,14 +1,15 @@
 #crag-map {
 	position: relative;
-	width: 1000px;
-	height: 600px;
+	width: 800px;
+	height: 400px;
 	margin: 0 auto;
 }
 
 #all-crags-graph {
 	width: 100%;
-	height: 300px;
-	border: 1px solid lightgray;
+	height: 220px;
+	border-top: 1px solid lightgray;
+	padding-top: 10px;
 }
 
 body {

@@ -36,12 +36,16 @@ function sandBagGraph() {
 	var onHover = function(d, i){};
 	var offHover = function(d, i){};
 	var sb = sandBag();
+	var padding = 0.2;
 
 	function my(selection) {
 		selection.each(function(data) {
 			var maxRows = d3.max(data, function(d) { return d.route.length });
 			height.domain([0, maxRows]);
 
+			var totalBarWidth = 100.0 / data.length,
+				barMargin = totalBarWidth * (padding / 2.0)
+				barWidth = totalBarWidth - (2*barMargin);
 
 			var graphs = d3.select(this).selectAll(".bar").data( data );
 
@@ -61,12 +65,16 @@ function sandBagGraph() {
 			newGraphs
 				.append("div")
 				.classed("bar-label", true)
+				.classed("bar-label-vert", true)
 				;
 
 			graphs.selectAll(".bar-label")
 				.text(function(d) { return d.name; } );
-			// graphs
-				// .style('height', function(d) { return height(d.route.length) + "%" });
+			
+			graphs
+				.style("width", barWidth+"%")
+				.style("margin", "0 "+barMargin+"%")
+				.style('height', function(d) { return height(d.route.length) + "%" });
 
 			graphs.selectAll(".sandbag").data(function(d) { 
 				return [d.route]; 
@@ -90,12 +98,16 @@ function sandBagGraph() {
 
 	my.highlighter = function(d, i) {
 		return function(selection) {
-			if (!d && !i) {
-				selection.selectAll(".bar-highlighted").classed("bar-highlighted", false);
-			} else {
+			selection.selectAll(".bar-highlighted").classed("bar-highlighted", false);
+			if (d != null) {
 				var bars = selection.selectAll(".bar");
 				if (!i) {
-					var bar = bars.select(hasdata(d));
+					if (typeof d === "string")
+						var bar = bars.select(function(this_d) {
+							return d == this_d.name ? this : null;
+						});
+					else
+						var bar = bars.select(hasdata(d));
 				} else {
 					var bar = d3.select(bars[0][i]);
 				}
