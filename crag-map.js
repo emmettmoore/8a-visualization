@@ -137,7 +137,7 @@ function graph_all_crags(data) {
       ;
 
     demoGraph = d3.select("#demo-graph")
-      .datum([data[3]])
+      .datum([data[5]]) // rumney
       .call(demoGrapher)
       ;
 
@@ -149,8 +149,8 @@ function graph_all_crags(data) {
       var ref = demoHighlightedRoute.get();
       if (ref) {
         var route = ref.d;
-        demoRoute.text(route.name + " ("+route.grade+")");
-        demoStats.text(route.soft+" soft, "+route.fair+" fair or unnoted, "+route.hard+" hard");
+        demoRoute.text("Climb: "+route.name + " ("+route.grade+")");
+        demoStats.text(route.soft+" soft, "+route.fair+" fair or unnoted, "+route.hard+" hard (out of "+route.total+" ascents)");
         demoFairness.text("Fairness: "+route.fairness);
       }
     })

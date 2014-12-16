@@ -14,11 +14,6 @@ section {
 	border-top: 1px solid lightgray;
 	display: block;
 }
-#map-section {
-	margin-top: 1vh;
-	margin-bottom: 1vh;
-	height: 49vh;
-}
 #intro {
 	line-height: 1.5em;
 	font-weight: lighter;
@@ -49,11 +44,19 @@ section {
 			height: 100%;
 			margin-left: 85%;
 		}
+		#demo .demo {
+			font-size: 11pt;
+		}
 
+#map-section {
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	height: 49vh;
+}
 #crag-map {
 	position: relative;
-	width: 50%;
-	height: 110%;
+	width: 55%;
+	height: 100%;
 	margin: 0 auto;
 }
 
