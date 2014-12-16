@@ -1,6 +1,8 @@
 .bar {
+	position: relative;
 	display: inline-block;
-	margin: 0 10px 0 10px;
+	/*margin: 0 10px 0 10px;*/
+	margin: 0;
 	font: 10px sans-serif;
 }
 .bar-highlighted {
@@ -8,13 +10,20 @@
 	border: 1px solid aqua;
 }
 .bar-label {
-	position: relative;
-	top: 5px;
+	position: absolute;
+	transform: rotate(45deg);
+	text-align: left;
+	width: 200px;
+	transform-origin: left bottom;
+}
+.bar-label-vert {
+	
 }
 .sandbag {
 	height: 100%;
-	width: 30px;
-	margin: 0 auto;
+	/*width: 30px;*/
+	width: 100%;
+	margin: 0 auto;	/*horizontally align within container (right margin is auto)*/
 }
 .sandbag > div:first-child {
 	border-radius: 2px 2px 0 0;
