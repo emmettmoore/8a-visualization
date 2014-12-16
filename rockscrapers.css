@@ -5,8 +5,7 @@
 	margin: 0 auto;
 }
 
-#all-crags-graph {
-	width: 100%;
+#all-crags-graph, #routes-graph {
 	height: 220px;
 	border-top: 1px solid lightgray;
 	padding-top: 10px;
@@ -18,4 +17,8 @@ body {
 
 h1 {
 	text-align: center;
+}
+
+.sandbag-graph .clicked {
+	border-bottom: 1px solid black;
 }

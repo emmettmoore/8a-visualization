@@ -22,32 +22,34 @@ function setRef(activeVar, functorVal) {
 }
 
 function sandBagGraph() {
-	// Bound data should be an array of objects:
-	// [
-	//		{
-	//			"name": "",
-	//			"route": [-.8, 0, .2, ...]
-	//		}, ...
-	// ]
-
 	var height = d3.scale.linear()
 		.range([0, 100])
 
-	var onHover = function(d, i){};
-	var offHover = function(d, i){};
-	var sb = sandBag();
+	var onHover, offHover, onClick;
+		onHover = offHover = onClick = function(d, i){};
+	var fairnessArrAccessor = function(d, i) {
+		return d.fairness;
+	};
+
 	var padding = 0.2;
+	
+	var sb = sandBag();
 
 	function my(selection) {
 		selection.each(function(data) {
-			var maxRows = d3.max(data, function(d) { return d.route.length });
+			var maxRows = d3.max(data, function(d) {
+				return fairnessArrAccessor(d).length
+			});
 			height.domain([0, maxRows]);
 
 			var totalBarWidth = 100.0 / data.length,
 				barMargin = totalBarWidth * (padding / 2.0)
 				barWidth = totalBarWidth - (2*barMargin);
 
-			var graphs = d3.select(this).selectAll(".bar").data( data );
+			var graphs = d3.select(this)
+				.classed("sandbag-graph", true)
+					.selectAll(".bar")
+					.data( data );
 
 			graphs.exit().remove();
 
@@ -57,6 +59,7 @@ function sandBagGraph() {
 				.style('height', "100%")
 				.on('mouseenter', onHover)
 				.on('mouseleave', offHover)
+				.on('click', onClick)
 				;
 			newGraphs
 				.append("div")
@@ -65,19 +68,20 @@ function sandBagGraph() {
 			newGraphs
 				.append("div")
 				.classed("bar-label", true)
-				.classed("bar-label-vert", true)
 				;
 
-			graphs.selectAll(".bar-label")
-				.text(function(d) { return d.name; } );
+			var bls = graphs.selectAll(".bar-label")
+				.text(function(d) {
+					return d.name;
+				});
 			
 			graphs
 				.style("width", barWidth+"%")
 				.style("margin", "0 "+barMargin+"%")
-				.style('height', function(d) { return height(d.route.length) + "%" });
+				.style('height', function(d) { return height(fairnessArrAccessor(d).length) + "%" });
 
 			graphs.selectAll(".sandbag").data(function(d) { 
-				return [d.route]; 
+				return [fairnessArrAccessor(d)]; 
 			})
 				.call(sb);
 		});
@@ -90,9 +94,19 @@ function sandBagGraph() {
 		offHover = offhover;
 		return my;
 	}
+	my.click = function(fun) {
+		if (!arguments.length) return onClick;
+		onClick = fun;
+		return my;
+	}
 	my.fairnessAccessor = function(fun) {
 		if (!arguments.length) return sb.accessor();
 		sb.accessor(fun);
+		return my;
+	}
+	my.fairnessArrAccessor = function(fun) {
+		if (!arguments.length) return fairnessArrAccessor;
+		fairnessArrAccessor = fun;
 		return my;
 	}
 
