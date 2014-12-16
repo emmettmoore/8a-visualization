@@ -2,6 +2,7 @@ var NUM_RED_ASCENTS = 24692;
 
 highlightedCrag = new ReactiveVar();
 // clickedCrag = new ReactiveVar();
+highlightedRoute = new ReactiveVar();
 
 var softColor = 'blue';
 var hardColor = 'red';
@@ -30,6 +31,7 @@ function graph_all_crags(data) {
         return d.route;
       })
       .hover(setRef(highlightedCrag), setRef(highlightedCrag, null))
+      .routeHover(setRef(highlightedRoute), setRef(highlightedRoute, null))
       // .click(function(d, i) {
       //   clickedCrag.set({d: d, i: i});
       //   d3.select(this.parentNode).select(".clicked")
@@ -59,6 +61,15 @@ function graph_all_crags(data) {
         cragsGraph.call(cragsGrapher.highlighter(null))
       } else {
         cragsGraph.call(cragsGrapher.highlighter(ref.d, ref.i));
+      }
+    });
+
+    Tracker.autorun(function highlightRoutesGraph() {
+      var ref = highlightedRoute.get();
+      if (!ref) {
+        routesGraph.call(routesGrapher.highlighter(null))
+      } else {
+        routesGraph.call(routesGrapher.highlighter(ref.d, ref.i));
       }
     });
 
@@ -97,7 +108,7 @@ function graph_all_crags(data) {
         .datum(data)
         .call(routesGrapher)
         ;
-    })
+    });
 }
 
 function populate_fills(raw_crags) {
