@@ -121,6 +121,39 @@ function graph_all_crags(data) {
         .call(routesGrapher)
         ;
     });
+
+
+    // Demo graph
+    demoHighlightedRoute = new ReactiveVar();
+    demoGrapher = sandBagGraph()
+      .fairnessAccessor(function(d, i) {
+        return d.fairness;
+      })
+      .fairnessArrAccessor(function(d) {
+        return d.route;
+      })
+      .routeHover(setRef(demoHighlightedRoute), setRef(demoHighlightedRoute, null))
+      .label(false)
+      ;
+
+    demoGraph = d3.select("#demo-graph")
+      .datum([data[5]]) // rumney
+      .call(demoGrapher)
+      ;
+
+    var demoRoute = d3.select("#demo-route"),
+        demoStats = d3.select("#demo-stats")
+        demoFairness = d3.select("#demo-fairness"),
+
+    Tracker.autorun(function updateDemo() {
+      var ref = demoHighlightedRoute.get();
+      if (ref) {
+        var route = ref.d;
+        demoRoute.text("Climb: "+route.name + " ("+route.grade+")");
+        demoStats.text(route.soft+" soft, "+route.fair+" fair or unnoted, "+route.hard+" hard (out of "+route.total+" ascents)");
+        demoFairness.text("Fairness: "+route.fairness);
+      }
+    })
 }
 
 function populate_fills(raw_crags) {
