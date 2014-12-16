@@ -1,5 +1,7 @@
 var NUM_RED_ASCENTS = 24692;
 
+highlighted = new ReactiveVar();
+
 var softColor = 'blue';
 var hardColor = 'red';
 
@@ -24,12 +26,22 @@ function graph_all_crags(data) {
       .fairnessAccessor(function(d, i) {
         return d.fairness;
       })
+      .hover(setRef(highlighted), setRef(highlighted, null))
       ;
 
     graph = d3.select("#all-crags-graph")
       .datum(data)
       .call(grapher)
       ;
+
+    Tracker.autorun(function highlightGraph() {
+      var ref = highlighted.get();
+      if (!ref) {
+        graph.call(grapher.highlighter(null))
+      } else {
+        graph.call(grapher.highlighter(ref.d, ref.i));
+      }
+    });
 }
 
 function populate_fills(raw_crags) {

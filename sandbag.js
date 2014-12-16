@@ -98,9 +98,8 @@ function sandBagGraph() {
 
 	my.highlighter = function(d, i) {
 		return function(selection) {
-			if (!d && !i) {
-				selection.selectAll(".bar-highlighted").classed("bar-highlighted", false);
-			} else {
+			selection.selectAll(".bar-highlighted").classed("bar-highlighted", false);
+			if (d != null) {
 				var bars = selection.selectAll(".bar");
 				if (!i) {
 					var bar = bars.select(hasdata(d));
