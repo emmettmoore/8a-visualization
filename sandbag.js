@@ -104,6 +104,11 @@ function sandBagGraph() {
 		sb.accessor(fun);
 		return my;
 	}
+	my.routeHover = function(fun) {
+		if (!arguments.length) return sb.hover();
+		sb.hover(fun);
+		return my;
+	}
 	my.fairnessArrAccessor = function(fun) {
 		if (!arguments.length) return fairnessArrAccessor;
 		fairnessArrAccessor = fun;
@@ -146,6 +151,8 @@ function sandBag() {
 		hardColor = 'red';
 
 	function fairness(d, i) { return d; };
+	function onHover(d, i) {};
+	function offHover(d, i) {};
 
 	var color = d3.scale.linear()
 		.domain([-1, 0, 1])
@@ -166,6 +173,8 @@ function sandBag() {
 			bars.enter()
 				.append("div")
 				.style("width", "100%")
+				.on("mouseenter", onHover)
+				.on("mouseleave", offHover)
 				;
 
 			bars
@@ -178,6 +187,13 @@ function sandBag() {
 		});
 	};
 
+	my.hover = function(onhover, offhover) {
+		offhover = offhover || function(){};
+		// if (!arguments.length) return onHover;
+		onHover = onhover;
+		offHover = offhover;
+		return my;
+	}
 	my.accessor = function(fun) {
 		if (!arguments.length) return fairness;
 		fairness = fun;
