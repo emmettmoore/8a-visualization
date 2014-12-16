@@ -123,6 +123,8 @@ def cragsFromJson(dataPath):
                 else:
                     orig_name[key_name] = route['name']
                     route_keys[key_name] = i
+            for i in to_del:
+                del crag['route'][i]
 
             for route in crag['route']:
                 # get softness of route
